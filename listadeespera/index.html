@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nós ensinamos médicos e estudantes de medicina como conduzir revisões sistemáticas e meta-análises com autonomia, para terem carreiras de destaque.">
+    <title>Intensivo de Metas - Lista de Espera</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Intl Tel Input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-background">
+        <canvas id="particlesCanvas"></canvas>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <img src="assets/logo.png" alt="Intensivo de Metas" class="nav__logo-img">
+            </div>
+
+            <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav__menu" id="navMenu">
+                <li class="nav__item"><a href="#top" class="nav__link">Topo</a></li>
+                <li class="nav__item"><a href="#academy" class="nav__link">Intensivo de Metas</a></li>
+                <li class="nav__item"><a href="#mentor" class="nav__link">Mentor</a></li>
+                <li class="nav__item"><a href="#modules" class="nav__link">Módulos</a></li>
+                <li class="nav__item"><a href="#results" class="nav__link">Resultados</a></li>
+            </ul>
+
+            <a href="#waitlist" class="btn btn--waitlist">
+                Entrar na lista de espera
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    Nós ensinamos médicos e estudantes de medicina como conduzir revisões sistemáticas e meta-análises com autonomia, para terem carreiras de destaque.
+                </h1>
+                <a href="#waitlist" class="btn btn--primary btn--hero">
+                    Entrar na lista de espera
+                    <span class="btn--hero-icon">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+                <p class="hero__disclaimer">
+                    <strong>Aviso:</strong> Nós não garantimos publicações. O Intensivo de Metas ensina estatística, métodos e escrita científica de revisões sistemáticas e meta-análises, com apoio pleno aos alunos. Publicações são de responsabilidade exclusiva dos autores.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academy Section -->
+    <section class="section section--light" id="academy">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__subtitle animate-on-scroll">Nossa essência</p>
+                <h2 class="section__title animate-on-scroll">O que é o Intensivo de Metas?</h2>
+            </div>
+            <div class="section__content">
+                <p class="section__text animate-on-scroll">
+                    O Intensivo de Metas, também chamado de Meta-Analysis Academy, é o treinamento absoluto em revisões sistemáticas e meta-análises, que te capacita desde o zero a criar um projeto, aplicar a metodologia correta, conduzir toda a estatística e escrever o artigo científico.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="section section--light section--why">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title animate-on-scroll">Por que fazer revisão sistemática<br/>e meta-análise?</h2>
+                <p class="section__subtitle--dark animate-on-scroll">São três motivos principais – autonomia, impacto e agilidade.</p>
+            </div>
+
+            <div class="cards cards--light">
+                <article class="card card--light animate-on-scroll">
+                    <div class="card__number">01.</div>
+                    <h3 class="card__title card__title--dark">Autonomia.</h3>
+                    <p class="card__text card__text--dark">
+                        A revisão sistemática e meta-análise te permite fazer publicações de qualquer lugar do mundo. Você não precisa de um comitê de ética, de seu professor, de um estatístico, ou de apoio de sua instituição. Você não precisa nem de filiação a uma universidade ou hospital. Basta um computador, internet, e a metodologia que vamos te ensinar.
+                    </p>
+                </article>
+
+                <article class="card card--light animate-on-scroll">
+                    <div class="card__number">02.</div>
+                    <h3 class="card__title card__title--dark">Impacto.</h3>
+                    <p class="card__text card__text--dark">
+                        Você certamente já viu uma pirâmide de evidência na sua formação. Olhe no topo dela. Lá está a revisão sistemática e meta-análise. Com as metas, suas publicações serão relevantes. Não desperdice tempo com relatos de caso e outros tipos de pesquisa de baixo impacto. Aprenda a revisão sistemática e meta-análise, publique nas melhores revistas e apresente nos melhores congressos mundiais.
+                    </p>
+                </article>
+
+                <article class="card card--light animate-on-scroll">
+                    <div class="card__number">03.</div>
+                    <h3 class="card__title card__title--dark">Agilidade.</h3>
+                    <p class="card__text card__text--dark">
+                        Talvez você já tenha passado pela frustração de ter um trabalho parado no comitê de ética por meses. Ou pela demora de coletar dados infindáveis de prontuários. A revisão sistemática e meta-análise não precisa de nada disso. Com o domínio da técnica que vamos te ensinar, o tempo médio para conduzir uma revisão sistemática e meta-análise é de 5 a 7 semanas, desde a ideia até o envio para revista.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section section--stats">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stats__content animate-on-scroll">
+                    <h2 class="stats__number"><span class="counter" data-target="15">0</span>+ anos</h2>
+                    <p class="stats__description">ensinando alunos a publicarem artigos de alto impacto com autonomia.</p>
+                    <div class="stats__items">
+                        <div class="stats__item">
+                            <span class="stats__value"><span class="counter" data-target="641">0</span>+</span>
+                            <span class="stats__label">participações em<br/>congresso.</span>
+                        </div>
+                        <div class="stats__item">
+                            <span class="stats__value"><span class="counter" data-target="494">0</span>+</span>
+                            <span class="stats__label">participações em<br/>papers.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats__image animate-on-scroll">
+                    <img src="assets/grupo_foto.png" alt="Alunos do Intensivo de Metas" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentor Section -->
+    <section class="section section--light section--mentor" id="mentor">
+        <div class="container">
+            <div class="mentor__grid">
+                <div class="mentor__image animate-on-scroll">
+                    <img src="assets/mentor.avif" alt="Rhanderson Cardoso, MD, FACC" onerror="this.style.display='none'">
+                </div>
+                <div class="mentor__content animate-on-scroll">
+                    <p class="mentor__label">seu mentor na sua jornada</p>
+                    <h2 class="mentor__name">Rhanderson Cardoso,<br/>MD, FACC</h2>
+                    <p class="mentor__bio">
+                        Rhanderson Cardoso, MD, FACC, é cardiologista no Brigham and Women's Hospital, Harvard Medical School, com residência em cardiologia e mestrado em epidemiologia cardiovascular pelo Johns Hopkins.
+                    </p>
+                    <p class="mentor__bio">
+                        Rhanderson se formou na Universidade Federal de Goiás e fez residência médica na University of Miami, onde também foi chief resident. Ele ganhou diversos prêmios pelo ensino, como o Rhanderson Cardoso Service Award na Universidade de Miami e o Junior Faculty Teaching Award do departamento cardiovascular na Harvard Medical School.
+                    </p>
+                    <p class="mentor__bio">
+                        Essa trajetória foi possível através de bênçãos de Deus e oportunidades que surgiram na carreira do Rhanderson por meio de publicações científicas. Ele aprendeu a fazer revisões sistemáticas e meta-análises no começo da carreira. Hoje, tem mais de 90 publicações em grandes revistas internacionais e mais de 2500 citações na literatura, incluindo por diretrizes do American Heart Association, American College of Cardiology e European Society of Cardiology.
+                    </p>
+                    <p class="mentor__bio">
+                        Através do Intensivo de Metas, também chamado de Meta-Analysis Academy, o Dr. Rhanderson hoje ensina médicos e estudantes de medicina do mundo todo a terem um caminho semelhante: publicações científicas fortes, através de revisões sistemáticas e meta-análises, com autonomia, para transformar carreiras.
+                    </p>
+                    <p class="mentor__disclaimer">
+                        *O Intensivo de Metas não possui filiação com as instituições mencionadas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Approach Section -->
+    <section class="section section--light section--approach">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__subtitle animate-on-scroll">NOSSO ENSINO</p>
+                <h2 class="section__title animate-on-scroll">Como funciona o Intensivo de Metas?</h2>
+            </div>
+            <div class="section__content">
+                <p class="section__text animate-on-scroll">
+                    Em cada um dos 10 módulos, um treinamento teórico-prático. Primeiro, uma aula teórica com didática única. Segundo, um exercício próprio, real, da literatura, onde você vai implementar tudo que aprendeu na prática. É o exercício que vai te habilitar a fazer revisões sistemáticas e meta-análises com autonomia.
+                </p>
+                <p class="section__text animate-on-scroll" style="margin-top: var(--spacing-md);">
+                    Por fim, uma aula prática resolvendo o exercício contigo. A aula prática é ao vivo, interativa, com espaço para dúvidas e discussões entre alunos. Essa aula acontece sábado (turma em português) ou domingo (turma em inglês), às 8:00, horário de Brasília. Se você perder a aula ao vivo, pode assistir à gravação depois.
+                </p>
+                <p class="approach__check animate-on-scroll">Confira os módulos abaixo:</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sneak Peak Section -->
+    <section class="section section--light section--modules" id="modules">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__subtitle animate-on-scroll">SNEAK PEAK</p>
+                <h2 class="section__title animate-on-scroll">Por dentro do curso</h2>
+            </div>
+            <div class="modules__accordion">
+                <h3 class="modules__title">Módulo de Introdução</h3>
+                <p style="color: #64748B; margin-bottom: 1.5rem; line-height: 1.7;">
+                    Este módulo apresenta os fundamentos necessários para começar sua jornada em meta-análise. Ele explora desde a relevância desse tipo de estudo até conceitos estatísticos básicos, diferentes desenhos de estudo, formulação de perguntas de pesquisa no formato PICOTT, medidas de associação, noções iniciais de buscas no PubMed e reconhecimento dos principais tipos de publicação científica.
+                </p>
+                <div class="module__item">
+                    <button class="module__header">
+                        <span class="module__icon">+</span>
+                        <span class="module__name">Por que a meta-análise é uma ferramenta essencial para a prática baseada em evidências?</span>
+                    </button>
+                    <div class="module__content"><p></p></div>
+                </div>
+                <div class="module__item">
+                    <button class="module__header">
+                        <span class="module__icon">+</span>
+                        <span class="module__name">Quais conceitos estatísticos básicos preciso revisar antes de começar?</span>
+                    </button>
+                    <div class="module__content"><p></p></div>
+                </div>
+                <div class="module__item">
+                    <button class="module__header">
+                        <span class="module__icon">+</span>
+                        <span class="module__name">Quais são os principais tipos de desenho de estudo em pesquisa clínica e suas diferenças?</span>
+                    </button>
+                    <div class="module__content"><p></p></div>
+                </div>
+                <div class="module__item">
+                    <button class="module__header">
+                        <span class="module__icon">+</span>
+                        <span class="module__name">Como formular uma pergunta de pesquisa estruturada usando o modelo PICOTT?</span>
+                    </button>
+                    <div class="module__content"><p></p></div>
+                </div>
+                <div class="module__item">
+                    <button class="module__header">
+                        <span class="module__icon">+</span>
+                        <span class="module__name">O que são medidas de associação e como interpretá-las?</span>
+                    </button>
+                    <div class="module__content"><p></p></div>
+                </div>
+                <div class="module__item">
+                    <button class="module__header">
+                        <span class="module__icon">+</span>
+                        <span class="module__name">Como funciona a base de dados PubMed e quais os primeiros passos para realizar uma busca eficaz?</span>
+                    </button>
+                    <div class="module__content"><p></p></div>
+                </div>
+                <div class="module__item">
+                    <button class="module__header">
+                        <span class="module__icon">+</span>
+                        <span class="module__name">Quais são os diferentes tipos de publicação científica e como identificá-los?</span>
+                    </button>
+                    <div class="module__content"><p></p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Methods Section -->
+    <section class="section section--light">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title animate-on-scroll">Módulos Teórico-Práticos</h2>
+            </div>
+            <div class="methods__grid">
+                <div class="method__card animate-on-scroll" style="background: var(--color-bg-light); border: 1px solid #E2E8F0;">
+                    <h3 class="method__title" style="color: var(--color-text-dark);">01 - Aulas teóricas</h3>
+                    <p class="method__description" style="color: #64748B;">
+                        As aulas teóricas fornecem uma base sólida de conhecimento, explicando conceitos fundamentais e abordagens essenciais para a compreensão do tema.
+                    </p>
+                </div>
+                <div class="method__card animate-on-scroll" style="background: var(--color-bg-light); border: 1px solid #E2E8F0;">
+                    <h3 class="method__title" style="color: var(--color-text-dark);">02 - Exercícios</h3>
+                    <p class="method__description" style="color: #64748B;">
+                        Exercícios e atividades práticas desenvolvidas para reforçar o aprendizado e testar o conhecimento adquirido nas aulas.
+                    </p>
+                </div>
+                <div class="method__card animate-on-scroll" style="background: var(--color-bg-light); border: 1px solid #E2E8F0;">
+                    <h3 class="method__title" style="color: var(--color-text-dark);">03 - Aulas práticas</h3>
+                    <p class="method__description" style="color: #64748B;">
+                        Aulas práticas voltadas para a aplicação direta dos conceitos aprendidos na teoria. Por meio de exemplos reais, estudos de caso e demonstrações passo a passo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Carousel Section -->
+    <section class="section section--light section--results" id="results">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__subtitle animate-on-scroll">Resultados que Falam por Si</p>
+                <h2 class="section__title animate-on-scroll">Veja a força e impacto<br/>das publicações.</h2>
+                <p class="section__text animate-on-scroll">
+                    Quando você tem um método validado e a orientação certa, o crescimento é inevitável.<br/>
+                    Veja como nossos alunos estão se destacando no mercado com suas publicações!
+                </p>
+            </div>
+            <div class="carousel__wrapper">
+                <div class="carousel__container" id="resultsCarousel">
+                    <div class="carousel__item">
+                        <img src="assets/result-1.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Igor Vinicius et al.</h4>
+                        <p class="carousel__achievement">Premiação no '25th EFORT Annual Congress'.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-2.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Dilson Pimentel et al.</h4>
+                        <p class="carousel__achievement">Premiação no 'VEITH Symposium 2024'.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-3.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Pedro Bregion et al.</h4>
+                        <p class="carousel__achievement">Vencedor do 'Travel Grant Award' no 'Obesity Week 2024'.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-4.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Natália Milioli et al.</h4>
+                        <p class="carousel__achievement">Vencedora do 'National Scholar Award' na '32nd United European Gastroenterology Week'.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-5.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Luis Felipe Leite et al.</h4>
+                        <p class="carousel__achievement">Recebeu o 'Conquer Cancer Award' no 2025 ASCO Gastrointestinal Cancers Symposium.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-6.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Rafael Ayala et al.</h4>
+                        <p class="carousel__achievement">Citação de meta-análise no 'EACTS/EACTAIC/EBCP Guidelines on cardiopulmonary bypass in adult cardiac surgery'.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-7.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Isabella Michelon et al.</h4>
+                        <p class="carousel__achievement">Citação de meta-análise pelo 'Dana-Farber's Breast Oncology Center'.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-8.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Stefano Baraldo et al.</h4>
+                        <p class="carousel__achievement">Premiado no 'ENDO 2024 – 4th World Congress of GI Endoscopy'.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-9.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Amanda Godoi et al. e Rafael Morgado et al.</h4>
+                        <p class="carousel__achievement">Meta-análises citadas pela American Diabetes Association na diretriz 'Standards of Care in Diabetes - 2025'.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-10.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Ivo Queiroz et al.</h4>
+                        <p class="carousel__achievement">Vencedor do 'Council on Cardiovascular Surgery and Anesthesia Early Career Investigator Award' na American Heart Association 2024.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-11.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Sara Amaral et al.</h4>
+                        <p class="carousel__achievement">Vencedora do prêmio de melhor abstract no Congresso Mundial de Anestesia Regional e Dor.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-12.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Cynthia Florêncio et al.</h4>
+                        <p class="carousel__achievement">Citação de Meta-análise em página do UpToDate.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-13.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Catalina Herrán Fonseca</h4>
+                        <p class="carousel__achievement">Vencedora do prêmio ASH-BSH Abstract Achievement Award.</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="assets/result-14.jpg" alt="Conquista de aluno" onerror="this.style.display='none'">
+                        <h4 class="carousel__name">Esteban Rodriguez</h4>
+                        <p class="carousel__achievement">Vencedor de prêmio 'Paul Dudley White International Scholar Award' no American Heart Association.</p>
+                    </div>
+                </div>
+                <button class="carousel__nav carousel__nav--prev" data-carousel="resultsCarousel">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="carousel__nav carousel__nav--next" data-carousel="resultsCarousel">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Carousel -->
+    <section class="section section--light section--stories">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__subtitle animate-on-scroll">Inspire-se em quem já chegou lá</p>
+                <h2 class="section__title animate-on-scroll">Publicações fortes, com autonomia<br/>transformam carreiras.</h2>
+            </div>
+            <div class="carousel__wrapper">
+                <div class="carousel__container carousel__container--profiles" id="storiesCarousel">
+                    <div class="profile__card">
+                        <img src="assets/profile-1.jpg" alt="Perfil de aluno" class="profile__image" onerror="this.style.display='none'">
+                        <h4 class="profile__name">Caroline Balieiro</h4>
+                        <p class="profile__specialty">Observership in Dermatology</p>
+                        <p class="profile__institution">Brigham and Women's Hospital, Harvard Medical School</p>
+                    </div>
+                    <div class="profile__card">
+                        <img src="assets/profile-2.jpg" alt="Perfil de aluno" class="profile__image" onerror="this.style.display='none'">
+                        <h4 class="profile__name">Cintia Gomes</h4>
+                        <p class="profile__specialty">Internal Medicine</p>
+                        <p class="profile__institution">Parkview Medical Center</p>
+                    </div>
+                    <div class="profile__card">
+                        <img src="assets/profile-3.jpg" alt="Perfil de aluno" class="profile__image" onerror="this.style.display='none'">
+                        <h4 class="profile__name">Denilsa Navalha</h4>
+                        <p class="profile__specialty">Internal Medicine</p>
+                        <p class="profile__institution">University of Nebraska Medical Center</p>
+                    </div>
+                    <div class="profile__card">
+                        <img src="assets/profile-4.jpg" alt="Perfil de aluno" class="profile__image" onerror="this.style.display='none'">
+                        <h4 class="profile__name">Gabriel Chagas</h4>
+                        <p class="profile__specialty">Internal Medicine</p>
+                        <p class="profile__institution">Cleveland Clinic</p>
+                    </div>
+                    <div class="profile__card">
+                        <img src="assets/profile-5.jpg" alt="Perfil de aluno" class="profile__image" onerror="this.style.display='none'">
+                        <h4 class="profile__name">Lucca Lopes</h4>
+                        <p class="profile__specialty">Master of Public Health</p>
+                        <p class="profile__institution">Johns Hopkins Bloomberg School of Public Health</p>
+                    </div>
+                    <div class="profile__card">
+                        <img src="assets/profile-6.jpg" alt="Perfil de aluno" class="profile__image" onerror="this.style.display='none'">
+                        <h4 class="profile__name">Gabriela Brandão</h4>
+                        <p class="profile__specialty">General Surgery</p>
+                        <p class="profile__institution">Beth Israel Deaconess Medical Center, Harvard Medical School</p>
+                    </div>
+                    <div class="profile__card">
+                        <img src="assets/profile-7.jpg" alt="Perfil de aluno" class="profile__image" onerror="this.style.display='none'">
+                        <h4 class="profile__name">Luiza Giuliani</h4>
+                        <p class="profile__specialty">Radiation Oncology</p>
+                        <p class="profile__institution">UT Southwestern Medical Center</p>
+                    </div>
+                    <div class="profile__card">
+                        <img src="assets/profile-8.jpg" alt="Perfil de aluno" class="profile__image" onerror="this.style.display='none'">
+                        <h4 class="profile__name">Pedro Carvalho</h4>
+                        <p class="profile__specialty">Postdoctoral Research Fellow</p>
+                        <p class="profile__institution">Minneapolis Heart Institute Foundation</p>
+                    </div>
+                    <div class="profile__card">
+                        <img src="assets/profile-9.jpg" alt="Perfil de aluno" class="profile__image" onerror="this.style.display='none'">
+                        <h4 class="profile__name">Tulio Correa</h4>
+                        <p class="profile__specialty">Internal Medicine</p>
+                        <p class="profile__institution">University of Pittsburgh Medical Center</p>
+                    </div>
+                    <div class="profile__card">
+                        <img src="assets/profile-10.jpg" alt="Perfil de aluno" class="profile__image" onerror="this.style.display='none'">
+                        <h4 class="profile__name">Vanessa Vizentin</h4>
+                        <p class="profile__specialty">Pediatrics</p>
+                        <p class="profile__institution">University of Pittsburgh Medical Center</p>
+                    </div>
+                    <div class="profile__card">
+                        <img src="assets/profile-11.jpg" alt="Perfil de aluno" class="profile__image" onerror="this.style.display='none'">
+                        <h4 class="profile__name">Yasmin Dias</h4>
+                        <p class="profile__specialty">Obstetrics and Gynecology</p>
+                        <p class="profile__institution">University of Missouri</p>
+                    </div>
+                </div>
+                <button class="carousel__nav carousel__nav--prev" data-carousel="storiesCarousel">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="carousel__nav carousel__nav--next" data-carousel="storiesCarousel">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials Section -->
+    <section class="section section--light section--testimonials">
+        <div class="container">
+            <div class="testimonials__grid">
+                <div class="testimonial__card" data-video="video1.mp4">
+                    <div class="video__thumbnail">
+                        <img src="assets/testimonial-1.jpg" alt="Amanda Godoi" onerror="this.style.display='none'">
+                        <button class="video__play">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="rgba(14, 165, 233, 0.9)"/>
+                                <path d="M24 20L40 30L24 40V20Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="testimonial__info">
+                        <h4 class="testimonial__name">Amanda Godoi</h4>
+                        <p class="testimonial__quote">"O Intensivo de Metas contribui para a sua carreira não só com pesquisa, mas vai te colocar em contato com pessoas e profissionais que te motivam e ajudam a alcançar uma carreira de sucesso, seja no Brasil ou fora."</p>
+                        <div class="testimonial__rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial__card" data-video="video2.mp4">
+                    <div class="video__thumbnail">
+                        <img src="assets/testimonial-2.jpg" alt="Jacqueline Pirez" onerror="this.style.display='none'">
+                        <button class="video__play">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="rgba(14, 165, 233, 0.9)"/>
+                                <path d="M24 20L40 30L24 40V20Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="testimonial__info">
+                        <h4 class="testimonial__name">Jacqueline Pirez</h4>
+                        <p class="testimonial__quote">"O Intensivo de Metas e o Rhanderson entregam muito além do prometido. É o underpromise e overdeliver."</p>
+                        <div class="testimonial__rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial__card" data-video="video3.mp4">
+                    <div class="video__thumbnail">
+                        <img src="assets/testimonial-3.jpg" alt="Gustavo Busch" onerror="this.style.display='none'">
+                        <button class="video__play">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="rgba(14, 165, 233, 0.9)"/>
+                                <path d="M24 20L40 30L24 40V20Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="testimonial__info">
+                        <h4 class="testimonial__name">Gustavo Busch</h4>
+                        <p class="testimonial__quote">"Graças ao Intensivo de Metas hoje em dia eu sou confiante e sei como fazer uma revisão sistemática, meta-análise e publicação."</p>
+                        <div class="testimonial__rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Form Section -->
+    <section class="section section--dark section--waitlist" id="waitlist">
+        <div class="container">
+            <div class="waitlist__content">
+                <div class="section__header">
+                    <p class="section__subtitle">Resultados que Falam por Si</p>
+                    <h2 class="section__title">Alcance a carreira médica dos seus sonhos, por meio de publicações científicas.</h2>
+                    <p class="section__text" style="margin-top: var(--spacing-sm); color: var(--color-text-muted); font-size: 0.95rem;">Preencha os campos abaixo para reservar sua vaga, entraremos em contato para você garantir sua inscrição.</p>
+                </div>
+                <form id="leadForm" class="waitlist__form" novalidate>
+
+                    <div class="form-group">
+                        <label for="name" class="sr-only">Nome</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Nome"
+                            required
+                            aria-required="true"
+                            autocomplete="name"
+                            class="form__input"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Email"
+                            required
+                            aria-required="true"
+                            autocomplete="email"
+                            class="form__input"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="sr-only">Telefone</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Telefone"
+                            required
+                            aria-required="true"
+                            autocomplete="tel"
+                            class="form__input"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="education" class="sr-only">Selecione uma opção</label>
+                        <select id="education" name="education" required aria-required="true" class="form__select">
+                            <option value="">Selecione uma opção</option>
+                            <option value="Médico">Médico</option>
+                            <option value="Interno">Interno</option>
+                            <option value="Ciclo Clínico (medicina)">Ciclo Clínico (medicina)</option>
+                            <option value="Ciclo Básico (medicina)">Ciclo Básico (medicina)</option>
+                            <option value="Outros estudantes da saúde">Outros estudantes da saúde</option>
+                            <option value="Outros profissionais da saúde">Outros profissionais da saúde</option>
+                            <option value="Outras áreas">Outras áreas</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn--submit" id="submitBtn">
+                        <span class="btn-text">ENVIAR</span>
+                        <span class="btn-subtext">Clique aqui para se inscrever</span>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="section section--dark" style="padding-top: 0;">
+        <div class="container">
+            <p style="text-align: center; color: var(--color-text-muted); font-size: 0.85rem; max-width: 800px; margin: 0 auto; line-height: 1.7;">
+                O Intensivo de Metas ensina médicos, estudantes de medicina e profissionais da saúde a metodologia, estatística e escrita científica. Nós não fazemos publicações pelos nossos alunos. O Intensivo de Metas não está filiado à Harvard Medical School ou Brigham and Women's Hospital. Opiniões são exclusivas do Dr. Rhanderson Cardoso e colaboradores.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section--dark section--faq">
+        <div class="container">
+            <h2 class="faq__title">Perguntas frequentes</h2>
+            <div class="faq__accordion">
+                <div class="faq__item">
+                    <button class="faq__header">
+                        <span class="faq__question">O Intensivo de Metas garante publicações dos alunos?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__content">
+                        <p>Não, o Intensivo de Metas não garante publicações. O curso ensina estatística, métodos e escrita científica de revisões sistemáticas e meta-análises, com apoio pleno aos alunos. Publicações são de responsabilidade exclusiva dos autores.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__header">
+                        <span class="faq__question">Quem é o professor do curso?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__content">
+                        <p>O curso é liderado pelo Dr. Rhanderson Cardoso, MD, FACC, junto com outros instrutores experientes que são especialistas em revisões sistemáticas e meta-análises.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__header">
+                        <span class="faq__question">O Intensivo de Metas é adequado para o meu nível de formação?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__content">
+                        <p>Sim! O Intensivo de Metas é projetado para profissionais de saúde de todos os níveis, desde estudantes de medicina até médicos e pesquisadores.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__header">
+                        <span class="faq__question">Por quanto tempo terei acesso ao conteúdo do curso?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__content">
+                        <p>Você terá acesso ao programa por um ano completo a partir do início das aulas.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__header">
+                        <span class="faq__question">O Intensivo de Metas fornece certificado?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__content">
+                        <p>Sim, ao concluir o programa, você receberá um certificado de conclusão.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="video__modal" id="videoModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <button class="modal__close">&times;</button>
+            <video id="modalVideo" controls>
+                <source src="" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">&copy; 2026 Intensivo de Metas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Intl Tel Input JS -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
