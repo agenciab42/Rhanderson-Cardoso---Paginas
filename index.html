@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Intl Tel Input CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.min.css">
+    <!-- Non-blocking Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
 </head>
 <body>
     <!-- Animated Background -->
@@ -139,7 +138,7 @@
                     </div>
                 </div>
                 <div class="stats__image animate-on-scroll">
-                    <img src="assets/grupo_foto.png" alt="Meta-Analysis Academy students" onerror="this.style.display='none'">
+                    <img src="assets/grupo_foto.png" alt="Meta-Analysis Academy students" loading="lazy" onerror="this.style.display='none'">
                 </div>
             </div>
         </div>
@@ -150,7 +149,7 @@
         <div class="container">
             <div class="mentor__grid">
                 <div class="mentor__image animate-on-scroll">
-                    <img src="assets/mentor.avif" alt="Rhanderson Cardoso, MD, FACC" onerror="this.style.display='none'">
+                    <img src="assets/mentor.avif" alt="Rhanderson Cardoso, MD, FACC" loading="lazy" onerror="this.style.display='none'">
                 </div>
                 <div class="mentor__content animate-on-scroll">
                     <p class="mentor__label">THE FOUNDER AND LEAD MENTOR IN THE PROGRAM</p>
@@ -416,34 +415,34 @@
         </div>
         <div class="marquee__wrapper">
             <div class="marquee__track marquee__track--left">
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2001.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2002.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2003.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2004.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2005.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2006.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2007.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2008.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2009.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2010.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2011.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2012.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2013.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img src="results/Card%20Result%2014.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2001.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2002.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2003.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2004.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2005.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2006.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2007.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2008.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2009.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2010.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2011.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2012.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2013.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img src="results/Card%20Result%2014.png" alt=""></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2001.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2002.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2003.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2004.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2005.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2006.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2007.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2008.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2009.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2010.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2011.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2012.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2013.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2014.png" alt="Student achievement"></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2001.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2002.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2003.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2004.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2005.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2006.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2007.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2008.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2009.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2010.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2011.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2012.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2013.png" alt=""></div>
+                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2014.png" alt=""></div>
             </div>
         </div>
     </section>
@@ -458,32 +457,32 @@
         </div>
         <div class="marquee__wrapper">
             <div class="marquee__track marquee__track--right">
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2001.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2002.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2003.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2004.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2005.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2006.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2007.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2008.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2009.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2010.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2011.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2012.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img src="alunos/Card%20Person%2013.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2001.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2002.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2003.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2004.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2005.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2006.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2007.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2008.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2009.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2010.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2011.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2012.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img src="alunos/Card%20Person%2013.png" alt=""></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2001.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2002.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2003.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2004.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2005.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2006.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2007.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2008.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2009.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2010.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2011.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2012.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2013.png" alt="Student story"></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2001.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2002.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2003.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2004.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2005.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2006.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2007.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2008.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2009.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2010.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2011.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2012.png" alt=""></div>
+                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2013.png" alt=""></div>
             </div>
         </div>
     </section>
@@ -495,6 +494,7 @@
                 <div class="testimonial__card">
                     <div class="video__thumbnail video__thumbnail--yt">
                         <iframe
+                            loading="lazy"
                             src="https://www.youtube.com/embed/1qrAYZo9gQQ"
                             title="Otavio Cosendey testimonial"
                             frameborder="0"
@@ -513,6 +513,7 @@
                 <div class="testimonial__card">
                     <div class="video__thumbnail video__thumbnail--yt">
                         <iframe
+                            loading="lazy"
                             src="https://www.youtube.com/embed/DzVRxhqBYuY?start=1"
                             title="Cintia Gomes testimonial"
                             frameborder="0"
@@ -531,6 +532,7 @@
                 <div class="testimonial__card">
                     <div class="video__thumbnail video__thumbnail--yt">
                         <iframe
+                            loading="lazy"
                             src="https://www.youtube.com/embed/dZKr0W4kNAs"
                             title="Camila Guida testimonial"
                             frameborder="0"
@@ -549,6 +551,7 @@
                 <div class="testimonial__card">
                     <div class="video__thumbnail video__thumbnail--yt">
                         <iframe
+                            loading="lazy"
                             src="https://www.youtube.com/embed/uHOnRJx2dtU"
                             title="Alonzo Prata testimonial"
                             frameborder="0"
@@ -764,8 +767,6 @@
         </div>
     </footer>
 
-    <!-- Intl Tel Input JS -->
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

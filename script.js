@@ -32,8 +32,8 @@ class ParticlesAnimation {
         this.canvas = document.getElementById('particlesCanvas');
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
-        this.particleCount = 100;
-        this.connectionDistance = 150;
+        this.particleCount = window.innerWidth < 768 ? 20 : 40;
+        this.connectionDistance = 100;
 
         this.init();
         this.animate();
@@ -476,6 +476,22 @@ class VideoModal {
 // ========================================
 // Phone Input with Intl Tel Input
 // ========================================
+function loadIntlTelInputLibrary(callback) {
+    if (window.intlTelInput) {
+        callback();
+        return;
+    }
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.min.css';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js';
+    script.onload = callback;
+    document.head.appendChild(script);
+}
+
 function initPhoneInput() {
     const phoneInput = document.querySelector('#phone');
 
@@ -484,51 +500,49 @@ function initPhoneInput() {
         return;
     }
 
-    try {
-        state.phoneInput = window.intlTelInput(phoneInput, {
-            initialCountry: 'br',
-            preferredCountries: ['br', 'us', 'pt'],
-            separateDialCode: true,
-            utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js',
-            autoPlaceholder: 'polite',
-            formatOnDisplay: true
-        });
+    const setup = () => {
+        try {
+            state.phoneInput = window.intlTelInput(phoneInput, {
+                initialCountry: 'br',
+                preferredCountries: ['br', 'us', 'pt'],
+                separateDialCode: true,
+                utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js',
+                autoPlaceholder: 'polite',
+                formatOnDisplay: true
+            });
 
-        // Remove error on input
-        phoneInput.addEventListener('input', () => {
-            removeError(phoneInput);
-        });
+            phoneInput.addEventListener('input', () => {
+                removeError(phoneInput);
+            });
 
-        // Apply Brazilian mask
-        phoneInput.addEventListener('input', function() {
-            const selectedCountry = state.phoneInput.getSelectedCountryData();
+            phoneInput.addEventListener('input', function() {
+                const selectedCountry = state.phoneInput.getSelectedCountryData();
+                if (selectedCountry.iso2 === 'br') {
+                    const cursorPosition = this.selectionStart;
+                    const oldLength = this.value.length;
+                    this.value = applyBrazilianPhoneMask(this.value);
+                    const newLength = this.value.length;
+                    const newPosition = cursorPosition + (newLength - oldLength);
+                    this.setSelectionRange(newPosition, newPosition);
+                }
+            });
 
-            if (selectedCountry.iso2 === 'br') {
-                const cursorPosition = this.selectionStart;
-                const oldLength = this.value.length;
+            phoneInput.addEventListener('countrychange', function() {
+                const selectedCountry = state.phoneInput.getSelectedCountryData();
+                if (selectedCountry.iso2 === 'br' && this.value) {
+                    this.value = applyBrazilianPhoneMask(this.value);
+                } else if (selectedCountry.iso2 !== 'br' && this.value) {
+                    this.value = removeBrazilianPhoneMask(this.value);
+                }
+            });
 
-                this.value = applyBrazilianPhoneMask(this.value);
+        } catch (error) {
+            console.error('Error initializing phone input:', error);
+        }
+    };
 
-                const newLength = this.value.length;
-                const newPosition = cursorPosition + (newLength - oldLength);
-                this.setSelectionRange(newPosition, newPosition);
-            }
-        });
-
-        // Handle country change
-        phoneInput.addEventListener('countrychange', function() {
-            const selectedCountry = state.phoneInput.getSelectedCountryData();
-
-            if (selectedCountry.iso2 === 'br' && this.value) {
-                this.value = applyBrazilianPhoneMask(this.value);
-            } else if (selectedCountry.iso2 !== 'br' && this.value) {
-                this.value = removeBrazilianPhoneMask(this.value);
-            }
-        });
-
-    } catch (error) {
-        console.error('Error initializing phone input:', error);
-    }
+    // Load intl-tel-input lazily when user focuses the phone field
+    phoneInput.addEventListener('focus', () => loadIntlTelInputLibrary(setup), { once: true });
 }
 
 // ========================================
@@ -889,15 +903,7 @@ window.trackEvent = trackEvent;
 // ========================================
 // Initialize Everything
 // ========================================
-document.addEventListener('DOMContentLoaded', async () => {
-    // Load user location
-    try {
-        state.userLocation = await getUserLocation();
-        console.log('Location detected:', state.userLocation);
-    } catch (error) {
-        console.warn('Could not detect location:', error);
-    }
-
+document.addEventListener('DOMContentLoaded', () => {
     // Check if user prefers reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -905,13 +911,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         new ParticlesAnimation();
     }
 
-    // Existing functionality
+    // Core functionality
     new Navigation();
     new ScrollAnimations();
     new WaitlistButtons();
     new PerformanceOptimizer();
-
-    // New functionality
     new CounterAnimation();
     new Carousel('resultsCarousel');
     new Carousel('storiesCarousel');
@@ -919,12 +923,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     new Accordion('.faq__item');
     new VideoModal();
 
-    // Form functionality (replaces FormValidation class)
+    // Form functionality
     initPhoneInput();
     initFormValidation();
     initFormSubmit();
 
-    // Add loaded class to body for animations
+    // Load user location lazily after page is idle
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+            getUserLocation().then(loc => { state.userLocation = loc; }).catch(() => {});
+        });
+    } else {
+        setTimeout(() => {
+            getUserLocation().then(loc => { state.userLocation = loc; }).catch(() => {});
+        }, 3000);
+    }
+
     document.body.classList.add('loaded');
 });
 
