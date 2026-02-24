@@ -1,0 +1,706 @@
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+body {
+  font-family: "Ruda", sans-serif;
+  color: #334466;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Acessibilidade - Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Typography */
+h1 {
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 30px);
+  line-height: 1.3;
+}
+
+h2,
+h3 {
+  font-weight: 700;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  min-height: 100vh;
+  background: url("../assets/bg-desktop.png") no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 72px 96px;
+}
+
+.content {
+  max-width: 620px;
+}
+
+/* Logo */
+.logo {
+  margin-bottom: 32px;
+}
+
+.logo img {
+  height: 120px;
+  width: auto;
+  margin-left: -29px ;
+  margin-bottom: -40px;
+}
+
+/* Heading */
+h1 {
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #3b4f63;
+  margin-bottom: 36px;
+}
+
+/* ============================================
+   FORMULÁRIO
+   ============================================ */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.form-group {
+  width: 100%;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  color: #1f2937;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #3b82c4;
+  box-shadow: 0 0 0 3px rgba(59, 130, 196, 0.1);
+}
+
+input::placeholder {
+  color: #6b7280;
+}
+
+/* Select Customizado */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+/* Intl Tel Input */
+.iti {
+  width: 100%;
+}
+
+.iti input {
+  width: 100%;
+  height: 56px;
+  padding-left: 90px !important;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.iti__flag-container {
+  height: 100%;
+}
+
+.iti__selected-flag {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+/* ============================================
+   BOTÕES CTA
+   ============================================ */
+
+.cta-button {
+  margin-top: 8px;
+  padding: 18px 16px;
+  background: linear-gradient(180deg, #3b82c4 0%, #2f6fa3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  
+  box-shadow: 0 4px 0 #1f4f6e;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cta-button:hover {
+  background: linear-gradient(180deg, #4a91d4 0%, #3f7fb3 100%);
+}
+
+.cta-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #1f4f6e;
+}
+
+.cta-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cta-button .btn-subtext {
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: none;
+  opacity: 0.9;
+}
+
+/* Imagem Mobile */
+.doctor-mobile {
+  display: none;
+}
+
+/* ============================================
+   BARRA INFORMATIVA
+   ============================================ */
+
+.after-hero-bar {
+  width: 100%;
+  background: #2f425f;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* ============================================
+   SEÇÃO DE APRENDIZADO
+   ============================================ */
+
+.learning-section {
+  max-width: 1200px;
+  margin: 96px auto;
+  padding: 0 24px;
+}
+
+.learning-title {
+  text-align: center;
+  font-size: clamp(32px, 6vw, 67px);
+  line-height: 1.15;
+  max-width: 900px;
+  margin: 0 auto 48px;
+  color: #2f3e5c;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.learning-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.learning-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.card-line {
+  width: 56px;
+  height: 4px;
+  background: #2f3e5c;
+  margin-bottom: 20px;
+}
+
+.learning-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #2f3e5c;
+}
+
+.learning-card p {
+  font-size: 14px;
+  color: #5a6b84;
+  line-height: 1.5;
+}
+
+/* Featured card styles removed - no longer used */
+
+.learning-cta {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+}
+
+.learning-cta button {
+  width: 100%;
+  padding: clamp(18px, 4vw, 28px) clamp(16px, 6vw, 24px);
+  font-size: clamp(14px, 4vw, 18px);
+  background: linear-gradient(180deg, #4fa0cf 0%, #2f7db2 100%);
+  color: #fff;
+  border: none;
+  border-radius: clamp(10px, 3vw, 14px);
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.learning-cta button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
+
+.learning-cta button span {
+  display: block;
+  font-size: clamp(11px, 3vw, 13px);
+  font-weight: 400;
+  margin-top: 4px;
+  opacity: 0.9;
+  text-transform: none;
+}
+
+/* ============================================
+   SEÇÃO DO MENTOR
+   ============================================ */
+
+.mentor-section {
+  position: relative;
+  padding: 96px 24px 32px;
+  background: url("../assets/mentor-bg.png") no-repeat right center / contain, #ffffff;
+}
+
+.mentor-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mentor-content {
+  max-width: 640px;
+}
+
+.mentor-content h2 {
+  font-size: clamp(36px, 5vw, 48px);
+  line-height: 1.2;
+  color: #2f3e5c;
+  margin-bottom: 12px;
+}
+
+.mentor-content h3 {
+  font-size: clamp(22px, 3vw, 28px);
+  color: #2f7db2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.mentor-content p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #4a5a6a;
+  margin-bottom: 16px;
+}
+
+.mentor-content small {
+  display: block;
+  margin-top: 24px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #6b7c93;
+}
+
+.mentor-image {
+  display: none;
+}
+
+/* ============================================
+   CTA FINAL
+   ============================================ */
+
+.final-cta {
+  background: #2f425f;
+  padding: 100px 24px;
+  overflow: hidden;
+}
+
+.final-cta-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.final-left {
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+.final-left img {
+  width: 620px;
+  height: auto;
+  display: block;
+}
+
+.final-right {
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+  margin-left: -100px;
+}
+
+.final-card {
+  position: relative;
+  padding: 36px 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.final-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: -500px;
+  background: #ffffff;
+  border-radius: 32px 32px 32px 32px;
+  z-index: -1;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.final-header img {
+  max-width: 100%;
+  height: auto;
+}
+
+.final-button {
+  width: 100%;
+  max-width: 440px;
+  padding: 18px;
+  background: linear-gradient(180deg, #4fa0cf 0%, #2f7db2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.final-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.final-button span {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.9;
+  text-transform: none;
+}
+
+.final-note {
+  font-size: 11px;
+  color: #6b7c93;
+  max-width: 440px;
+  line-height: 1.5;
+}
+
+/* ============================================
+   MEDIA QUERIES - MOBILE
+   ============================================ */
+
+@media (max-width: 900px) {
+  
+
+  .logo img {
+    height: 120px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Hero */
+  .hero {
+    background: url("../assets/bg-mobile.png") no-repeat center center / cover;
+  }
+
+  .container {
+    padding: 12px 20px;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  h1 br {
+    display: none;
+  }
+
+  /* Form */
+  form {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  input,
+  select,
+  button {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  /* Doctor Mobile */
+  .doctor-mobile {
+    display: block !important;
+    width: 100%;
+    max-width: 600px;
+    margin: 32px auto -20px;
+  }
+
+  /* After Hero Bar */
+  .after-hero-bar {
+    font-size: clamp(20px, 5vw, 30px);
+    padding: 20px;
+  }
+
+  /* Learning Section */
+  .learning-section {
+    margin: 64px auto;
+  }
+
+  .learning-title {
+    margin-bottom: 36px;
+    margin-top: 32px;
+  }
+
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-cta {
+    grid-column: auto;
+    justify-self: center;
+    margin-top: 24px;
+  }
+
+  .learning-cta button {
+    max-width: 360px;
+  }
+
+  /* Mentor Section */
+  .mentor-section {
+    background: #ffffff;
+    padding: 64px 20px;
+  }
+
+  .mentor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mentor-image {
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  .mentor-image img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+
+  .mentor-content {
+    max-width: 100%;
+  }
+
+  .mentor-content h2,
+  .mentor-content h3,
+  .mentor-content p,
+  .mentor-content small {
+    text-align: center;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    padding: 60px 24px;
+  }
+
+  .final-cta-wrapper {
+    flex-direction: column;
+  }
+
+  .final-left {
+    margin-bottom: -30px;
+  }
+
+  .final-left img {
+    width: 320px;
+  }
+
+  .final-right {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .final-card {
+    padding: 28px 20px;
+  }
+
+  .final-card::before {
+    left: 0;
+    border-radius: 32px;
+  }
+
+  .final-header img {
+    max-width: 300px;
+  }
+
+  .final-button {
+    padding: clamp(16px, 4vw, 20px) clamp(16px, 6vw, 24px);
+    font-size: clamp(14px, 4vw, 16px);
+    border-radius: clamp(10px, 3vw, 12px);
+  }
+
+  .final-button span {
+    font-size: clamp(11px, 3.5vw, 13px);
+  }
+}
+
+/* ============================================
+   ESTADOS DE LOADING
+   ============================================ */
+
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ============================================
+   VALIDAÇÃO DE FORMULÁRIO
+   ============================================ */
+
+input.error,
+select.error {
+  border-color: #ef4444;
+}
+
+input.error:focus,
+select.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}

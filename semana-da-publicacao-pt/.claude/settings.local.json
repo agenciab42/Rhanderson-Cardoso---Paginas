@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git push -u origin main)",
+      "Bash(git remote set-url:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: Atualiza opções do campo de formação\n\nAjusta as opções de seleção de grau de formação para categorias mais específicas da área médica, incluindo diferentes níveis de estudantes e profissionais da saúde.\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: Refatora seção de aprendizado com 4 cards em layout horizontal\n\n- Remove card featured com imagem\n- Adiciona 4 cards iguais: leitura de artigos, geração de ideias, uso de IA e oportunidades internacionais\n- Altera layout para 4 colunas em desktop \\(1x4\\) e empilhado em mobile\n- Simplifica estrutura removendo parágrafos descritivos dos cards\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nchore: Atualiza logo da marca\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfix: Centraliza logo no mobile\n\n- Remove margin-right negativo que desalinhava a logo\n- Adiciona margin: 0 auto e display: block para centralizar\n- Corrige propriedade align-items incorreta em elemento img\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)"
+    ]
+  }
+}
