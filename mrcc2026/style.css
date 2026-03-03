@@ -11,9 +11,6 @@ body {
     font-family: 'Outfit', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-body {
     overflow-x: hidden;
 }
 
@@ -187,12 +184,8 @@ body {
     display: none;
     /* Escondido por padrão */
     margin-top: 40px;
-    width: calc(100% + 3rem);
-    /* Compensar padding do container mobile (1.5rem + 1.5rem) */
-    margin-left: -1.5rem;
-    /* Puxar para a borda esquerda */
-    margin-right: -1.5rem;
-    /* Puxar para a borda direita */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
     text-align: center;
     overflow: hidden;
 }
@@ -1103,6 +1096,7 @@ body {
     margin: 0 auto;
     position: relative;
     padding: 0 20px;
+    overflow: hidden;
 }
 
 .gallery-slider {
