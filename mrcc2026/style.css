@@ -1089,11 +1089,8 @@ body {
 }
 
 .gallery-wrapper {
-    max-width: 1200px;
-    /* Reduzido de 1400px para ficar mais centrado */
-    margin: 0 auto;
+    width: 100%;
     position: relative;
-    padding: 0 20px;
     overflow: hidden;
 }
 
