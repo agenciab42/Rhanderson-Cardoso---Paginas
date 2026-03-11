@@ -897,14 +897,12 @@ body {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
-.ticket-card.start {
-    background: #a17b4f;
-    /* Tom de de marrom/ouro da referência */
+.ticket-card.full {
+    background: #111111;
 }
 
 .ticket-card.vip {
-    background: #111111;
-    /* Preto VIP */
+    background: linear-gradient(135deg, #c89968 0%, #a17b4f 100%);
 }
 
 .ticket-main {
@@ -951,13 +949,13 @@ body {
 }
 
 .vip .benefits-button {
-    color: #ffffff;
-    background: transparent;
-    border: 1px solid #a17b4f;
+    color: #a17b4f;
+    background: #ffffff;
+    border: none;
 }
 
 .vip .benefits-button:hover {
-    background: #a17b4f;
+    background: #f5f0eb;
 }
 
 .ticket-actions {
@@ -979,7 +977,7 @@ body {
 }
 
 .vip .checkout-button {
-    background: #a17b4f;
+    background: #111111;
     color: #ffffff;
 }
 
@@ -989,7 +987,7 @@ body {
 }
 
 .vip .checkout-button:hover {
-    background: #c89968;
+    background: #222222;
 }
 
 .benefits-button:hover {
@@ -1240,6 +1238,98 @@ body {
         /* Aumentado no mobile também */
         height: 240px;
     }
+}
+
+/* ============== BENEFITS LIST ============== */
+.benefits-list {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+}
+
+.benefits-list.open {
+    max-height: 400px;
+}
+
+.benefits-list ul {
+    list-style: none;
+    padding: 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+}
+
+.check-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: #c89968;
+}
+
+.benefits-arrow {
+    transition: transform 0.3s ease;
+}
+
+.benefits-arrow.open {
+    transform: rotate(180deg);
+}
+
+/* ============== VER MAIS TESTIMONIALS ============== */
+.ver-mais-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.ver-mais-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: transparent;
+    border: 1px solid rgba(3, 21, 45, 0.25);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #03152d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Outfit', sans-serif;
+}
+
+.ver-mais-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.ver-mais-btn.open svg {
+    transform: rotate(180deg);
+}
+
+.ver-mais-btn:hover {
+    background: rgba(3, 21, 45, 0.05);
+}
+
+.testimonials-more {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1.2s ease;
+}
+
+.testimonials-more.open {
+    max-height: 6000px;
+}
+
+.testimonials-more .testimonials-grid {
+    margin-top: 20px;
 }
 
 /* ============== REVEAL ANIMATIONS ============== */
