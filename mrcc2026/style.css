@@ -52,6 +52,10 @@ body {
 
 .logo-container {
     margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 .logo {
@@ -120,7 +124,15 @@ body {
 /* ============== EVENT INFO ============== */
 .event-info {
     margin-bottom: 16px;
-    /* Reduzido de 24px */
+}
+
+/* Mobile: logo e date-box empilhados */
+@media screen and (max-width: 768px) {
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .date-box {
