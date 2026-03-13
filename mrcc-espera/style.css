@@ -1363,10 +1363,10 @@ body {
 .mrcc-form {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: clamp(0.45rem, 0.625vw, 0.75rem);
     width: 100%;
-    max-width: 520px;
-    margin-top: 1.5rem;
+    max-width: clamp(300px, 27.08vw, 520px);
+    margin-top: clamp(1rem, 1.25vw, 1.5rem);
 }
 
 .mrcc-form-wrapper {
@@ -1388,13 +1388,13 @@ body {
 .mrcc-input,
 .mrcc-select {
     width: 100%;
-    padding: 0.9rem 1.1rem;
+    padding: clamp(0.55rem, 0.75vw, 0.9rem) clamp(0.7rem, 0.917vw, 1.1rem);
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(197, 165, 90, 0.35);
     border-radius: 8px;
     color: #fff;
     font-family: 'Outfit', sans-serif;
-    font-size: 0.95rem;
+    font-size: clamp(0.72rem, 0.792vw, 0.95rem);
     transition: border-color 0.2s, background 0.2s;
     box-sizing: border-box;
 }
