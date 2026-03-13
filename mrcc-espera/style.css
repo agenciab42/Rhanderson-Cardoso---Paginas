@@ -1369,6 +1369,12 @@ body {
     margin-top: clamp(1rem, 1.25vw, 1.5rem);
 }
 
+.mrcc-form .cta-button {
+    padding: clamp(12px, 0.938vw, 18px) clamp(18px, 2.083vw, 40px);
+    font-size: clamp(0.78rem, 0.833vw, 1rem);
+    gap: clamp(0.5rem, 0.625vw, 0.75rem);
+}
+
 .mrcc-form-wrapper {
     display: flex;
     justify-content: center;
