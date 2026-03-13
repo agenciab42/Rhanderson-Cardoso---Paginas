@@ -108,7 +108,7 @@ body {
 }
 
 .main-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.35rem, 1.83vw, 2.2rem);
     font-weight: 700;
     color: #ffffff;
     line-height: 1.25;
@@ -162,7 +162,7 @@ body {
 
 /* ============== DESCRIPTION ============== */
 .description {
-    font-size: 17px;
+    font-size: clamp(13px, 0.885vw, 17px);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 20px;
@@ -261,10 +261,6 @@ body {
     .hero-container {
         gap: 2rem;
         padding: 0 2rem 2rem;
-    }
-
-    .main-title {
-        font-size: 2.2rem;
     }
 }
 

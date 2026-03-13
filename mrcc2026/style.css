@@ -108,11 +108,11 @@ body {
 }
 
 .main-title {
-    font-size: 2.8rem;
+    font-size: clamp(1.35rem, 1.83vw, 2.2rem);
     font-weight: 700;
     color: #ffffff;
     line-height: 1.25;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     letter-spacing: -0.5px;
     text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -162,17 +162,12 @@ body {
 
 /* ============== DESCRIPTION ============== */
 .description {
-    font-size: 22px;
-    /* Conforme Foto 2 */
+    font-size: clamp(13px, 0.885vw, 17px);
     line-height: 1.4;
-    /* 140% */
     color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 32px;
-    /* Reduzido de 1.5rem (~24px) - ajustado para o botão */
+    margin-bottom: 20px;
     font-weight: 300;
-    /* Light */
     max-width: 750px;
-    /* Garante que o texto quebre em aproximadamente 4 linhas */
 }
 
 .expert-mobile-container {
@@ -266,10 +261,6 @@ body {
     .hero-container {
         gap: 2rem;
         padding: 0 2rem 2rem;
-    }
-
-    .main-title {
-        font-size: 2.2rem;
     }
 }
 
