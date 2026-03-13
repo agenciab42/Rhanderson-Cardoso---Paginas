@@ -1536,3 +1536,66 @@ body {
 .pricing .iti__dial-code {
     color: rgba(3, 21, 45, 0.6);
 }
+
+/* ============== FORM MOBILE ============== */
+@media screen and (max-width: 768px) {
+    .mrcc-form {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 1.2rem;
+        gap: 0.65rem;
+        padding: 0 1.5rem;
+        box-sizing: border-box;
+    }
+
+    .mrcc-form .cta-button {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+        gap: 0.6rem;
+    }
+
+    .mrcc-input,
+    .mrcc-select {
+        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
+        background: #ffffff;
+        color: #03152d;
+        border-color: rgba(197, 165, 90, 0.5);
+    }
+
+    .mrcc-input::placeholder {
+        color: rgba(3, 21, 45, 0.4);
+    }
+
+    .mrcc-select {
+        color: rgba(3, 21, 45, 0.5);
+    }
+
+    .mrcc-select:valid {
+        color: #03152d;
+    }
+
+    .mrcc-select option {
+        background: #fff;
+        color: #03152d;
+    }
+
+    .mrcc-form .iti__flag-container {
+        border-right-color: rgba(197, 165, 90, 0.4);
+    }
+
+    .mrcc-form .iti__country-list {
+        background: #fff;
+        color: #03152d;
+    }
+
+    .mrcc-form .iti__dial-code {
+        color: rgba(3, 21, 45, 0.6);
+    }
+
+    .mrcc-form-disclaimer {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
