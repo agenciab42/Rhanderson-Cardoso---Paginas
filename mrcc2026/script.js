@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ============== LEAD FORM MRCC ==============
 const MRCC_CONFIG = {
-    webhook: { url: 'https://webhook-editor.infrab42.com/webhook/leads-lista-espera', funnelId: 13, timeout: 10000 },
+    webhook: { url: 'https://webhook-editor.infrab42.com/webhook/leads-lista-espera', funnelId: 3, timeout: 10000 },
     redirect: { url: '/', delay: 500 },
     validation: { emailRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, nameMinLength: 3 }
 };
