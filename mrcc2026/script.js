@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============== LEAD FORM MRCC ==============
 const MRCC_CONFIG = {
     webhook: { url: 'https://webhook-editor.infrab42.com/webhook/leads-lista-espera', funnelId: 3, timeout: 10000 },
-    redirect: { url: '/mrcc-espera/obrigado/', delay: 500 },
+    redirect: { url: 'https://rd.metaanalysisacademy.com/mrcc2026/obrigado/', delay: 500 },
     validation: { emailRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, nameMinLength: 3 }
 };
 
@@ -215,12 +215,9 @@ function mrccInitForm() {
                 signal: ctrl.signal
             });
             clearTimeout(tid);
-            const email = encodeURIComponent(document.getElementById('email').value.trim());
-            const name = encodeURIComponent(document.getElementById('name').value.trim());
             const utms = ['utm_source','utm_campaign','utm_medium','utm_content','utm_term']
                 .map(p => mrccGetUTM(p) ? `${p}=${encodeURIComponent(mrccGetUTM(p))}` : '').filter(Boolean).join('&');
-            let url = MRCC_CONFIG.redirect.url + `?email=${email}&name=${name}`;
-            if (utms) url += '&' + utms;
+            let url = MRCC_CONFIG.redirect.url + (utms ? '?' + utms : '');
             setTimeout(() => { window.location.href = url; }, MRCC_CONFIG.redirect.delay);
         } catch(err) {
             alert('Erro ao enviar. Tente novamente.');
@@ -355,12 +352,9 @@ function mrccInitForm2() {
                 signal: ctrl.signal
             });
             clearTimeout(tid);
-            const email = encodeURIComponent(document.getElementById('email2').value.trim());
-            const name = encodeURIComponent(document.getElementById('name2').value.trim());
             const utms = ['utm_source','utm_campaign','utm_medium','utm_content','utm_term']
                 .map(p => mrccGetUTM(p) ? `${p}=${encodeURIComponent(mrccGetUTM(p))}` : '').filter(Boolean).join('&');
-            let url = MRCC_CONFIG.redirect.url + `?email=${email}&name=${name}`;
-            if (utms) url += '&' + utms;
+            let url = MRCC_CONFIG.redirect.url + (utms ? '?' + utms : '');
             setTimeout(() => { window.location.href = url; }, MRCC_CONFIG.redirect.delay);
         } catch(err) {
             alert('Erro ao enviar. Tente novamente.');
