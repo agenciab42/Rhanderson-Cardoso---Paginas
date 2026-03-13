@@ -54,8 +54,8 @@ body {
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: flex-start;
+    gap: 1.5rem;
 }
 
 .logo {
