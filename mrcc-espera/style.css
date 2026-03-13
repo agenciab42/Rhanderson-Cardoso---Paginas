@@ -70,8 +70,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 80px 48px;
-    gap: 64px;
+    padding: 0 80px 24px;
+    gap: 40px;
     max-width: 1600px;
     margin: 0 auto;
     width: 100%;
@@ -108,11 +108,11 @@ body {
 }
 
 .main-title {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: #ffffff;
     line-height: 1.25;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     letter-spacing: -0.5px;
     text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -162,17 +162,12 @@ body {
 
 /* ============== DESCRIPTION ============== */
 .description {
-    font-size: 22px;
-    /* Conforme Foto 2 */
+    font-size: 17px;
     line-height: 1.4;
-    /* 140% */
     color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 32px;
-    /* Reduzido de 1.5rem (~24px) - ajustado para o botão */
+    margin-bottom: 20px;
     font-weight: 300;
-    /* Light */
     max-width: 750px;
-    /* Garante que o texto quebre em aproximadamente 4 linhas */
 }
 
 .expert-mobile-container {
@@ -1362,7 +1357,7 @@ body {
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
-    max-width: 440px;
+    max-width: 520px;
     margin-top: 1.5rem;
 }
 
@@ -1467,8 +1462,63 @@ body {
     color: rgba(255, 255, 255, 0.6);
 }
 
-#submitBtn.loading {
+#submitBtn.loading,
+#submitBtn2.loading {
     opacity: 0.65;
     cursor: not-allowed;
     pointer-events: none;
+}
+
+/* Form inside white pricing section */
+.pricing .mrcc-input,
+.pricing .mrcc-select {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(3, 21, 45, 0.25);
+    color: #03152d;
+}
+
+.pricing .mrcc-input::placeholder {
+    color: rgba(3, 21, 45, 0.4);
+}
+
+.pricing .mrcc-input:focus,
+.pricing .mrcc-select:focus {
+    border-color: #c89968;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.pricing .mrcc-select {
+    color: rgba(3, 21, 45, 0.5);
+}
+
+.pricing .mrcc-select option {
+    background: #fff;
+    color: #03152d;
+}
+
+.pricing .mrcc-select:valid {
+    color: #03152d;
+}
+
+.pricing .mrcc-form-disclaimer {
+    color: rgba(3, 21, 45, 0.4);
+}
+
+.pricing .iti__flag-container {
+    border-right-color: rgba(3, 21, 45, 0.2);
+}
+
+.pricing .iti__country-list {
+    background: #fff;
+    border-color: rgba(3, 21, 45, 0.2);
+    color: #03152d;
+}
+
+.pricing .iti__country.iti__highlight,
+.pricing .iti__country:hover {
+    background: rgba(200, 153, 104, 0.15);
+}
+
+.pricing .iti__dial-code {
+    color: rgba(3, 21, 45, 0.6);
 }
