@@ -319,6 +319,14 @@ button {
     animation: fadeInUp 1s ease;
 }
 
+.hero__subtitle {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: var(--spacing-lg);
+    animation: fadeInUp 1s ease 0.1s backwards;
+}
+
 .hero__disclaimer {
     max-width: 800px;
     margin: var(--spacing-lg) auto 0;
