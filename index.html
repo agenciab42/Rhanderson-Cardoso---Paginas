@@ -1,781 +1,658 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="We train doctors and medical students with the skills to conduct high-quality systematic reviews and meta-analyses">
-    <title>Meta-Analysis Academy - Training for Medical Professionals</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Non-blocking Google Fonts -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meta-Analysis Academy – High-Impact Academic Career</title>
+  <meta name="description"
+    content="The Meta-Analysis Academy provides end-to-end training in systematic reviews and meta-analyses – from idea generation to manuscript preparation." />
+  <meta name="keywords"
+    content="meta-analysis, systematic review, academic training, research methodology, Rhanderson Cardoso" />
+  <meta property="og:title" content="Meta-Analysis Academy" />
+  <meta property="og:description" content="Your journey to a high-impact career starts here." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CDN + custom tokens -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#1a2744',
+              dark: '#111c36',
+              deeper: '#0d1628',
+            },
+            brand: '#2d4fa1',
+          },
+          fontFamily: {
+            sans: ['IBM Plex Sans', 'Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-    <!-- Animated Background -->
-    <div class="animated-background">
-        <canvas id="particlesCanvas"></canvas>
+
+<body class="font-sans text-gray-800 antialiased">
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-navy-deeper border-b border-white/10">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between md:h-24 h-20 transition-all duration-300">
+
+      <!-- Logo -->
+      <a href="#" class="shrink-0">
+        <img src="img/logo_meta.png" alt="Meta-Analysis Academy" class="h-10 object-contain" />
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-10 text-sm font-semibold tracking-wide text-white/70 uppercase">
+        <a href="#hero" class="hover:text-white transition-colors">Home</a>
+        <a href="#about" class="hover:text-white transition-colors">About Us</a>
+        <a href="#program" class="hover:text-white transition-colors">Our Program</a>
+      </nav>
+
+      <!-- Desktop CTAs -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#waitlist"
+          class="inline-flex items-center px-5 py-2 rounded-full btn-gradient text-sm tracking-wide uppercase">
+          Join the waitlist
+        </a>
+        <a href="#"
+          class="inline-flex items-center px-5 py-2 rounded-full border border-white/30 text-white/80 text-sm font-semibold tracking-wide uppercase hover:bg-white/10 transition-colors">
+          Student Portal
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-toggle" class="md:hidden p-2 rounded text-white/70 hover:text-white" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
 
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <div class="nav__logo">
-                <!-- Space for logo image - replace src with your logo -->
-                <img src="assets/logo.png" alt="Meta-Analysis Academy" class="nav__logo-img">
-            </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy-deeper border-t border-white/10 px-4 pb-4">
+      <nav class="flex flex-col gap-3 pt-3 text-sm font-semibold text-white/70 uppercase tracking-wide">
+        <a href="#hero" class="hover:text-white">Home</a>
+        <a href="#about" class="hover:text-white">About Us</a>
+        <a href="#program" class="hover:text-white">Our Program</a>
+        <a href="#waitlist" class="mt-2 inline-flex justify-center px-5 py-2 rounded-full btn-gradient">
+          Join the waitlist
+        </a>
+        <a href="#"
+          class="inline-flex justify-center px-5 py-2 rounded-full border border-white/30 text-white/80 hover:bg-white/10 transition-colors">
+          Student Portal
+        </a>
+      </nav>
+    </div>
+  </header>
 
-            <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
 
-            <ul class="nav__menu" id="navMenu">
-                <li class="nav__item"><a href="#top" class="nav__link">Top</a></li>
-                <li class="nav__item"><a href="#academy" class="nav__link">Mission Statement</a></li>
-                <li class="nav__item"><a href="#mentor" class="nav__link">Mentor</a></li>
-                <li class="nav__item"><a href="#modules" class="nav__link">Modules</a></li>
-                <li class="nav__item"><a href="#results" class="nav__link">Results</a></li>
-            </ul>
+  <!-- ============================================================
+       SECTION 1 – HERO
+  ============================================================ -->
+  <section class="pt-16 bg-[#eef1f8] min-h-screen flex flex-col items-center justify-center" id="hero">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 lg:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-            <a href="#waitlist" class="btn btn--waitlist">
-                Join the waitlist
+        <!-- Left: copy -->
+        <div class="reveal">
+          <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] leading-tight font-normal text-gray-800">
+            Your journey to a<br />
+            <strong class="font-extrabold">high-impact</strong> career<br />
+            starts here
+          </h1>
+          <p class="mt-6 text-base sm:text-lg text-gray-600 max-w-md leading-relaxed">
+            Our rigorous training blends theory, hands-on practice,
+            and mentorship – so you can design, execute, and publish
+            systematic reviews and meta-analyses with autonomy.
+          </p>
+          <div class="mt-8" id="waitlist">
+            <a href="#"
+              class="flex items-center justify-center w-full py-5 rounded-lg btn-gradient shadow-lg shadow-navy/20"
+              style="font-size:34px">
+              Join the waitlist
             </a>
-        </nav>
-    </header>
-
-    <!-- Custom Cursor -->
-    <div id="cursor-ring"></div>
-    <div id="cursor-dot"></div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero__content">
-                <h1 class="hero__title">
-                    A global research program for doctors and medical students
-                </h1>
-                <p class="hero__subtitle">Learn how to design, conduct, and write high-quality systematic reviews and meta-analyses to advance your academic career.</p>
-                <a href="#waitlist" class="btn btn--primary btn--hero">
-                    Join the waitlist
-                    <span class="btn--hero-icon">
-                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-                            <path d="M7.5 15L12.5 10L7.5 5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
-                </a>
-            </div>
+          </div>
         </div>
-        <div class="scroll-indicator">
-            <span>scroll</span>
-            <div class="scroll-indicator__line"></div>
+
+        <!-- Right: hero image -->
+        <div class="reveal flex justify-center lg:justify-end" style="transition-delay:.15s">
+          <div class="relative w-full max-w-xl aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+            <img src="img/hero-group.png" alt="Meta-Analysis Academy students at a conference"
+              class="w-full h-full object-cover" />
+          </div>
         </div>
-    </section>
 
-    <!-- Academy Section -->
-    <section class="section section--light" id="academy">
-        <div class="container">
-            <div class="section__header">
-                <p class="section__subtitle animate-on-scroll">OUR MISSION</p>
-                <h2 class="section__title animate-on-scroll">What is the Meta-Analysis Academy?</h2>
-            </div>
-            <div class="section__content">
-                <p class="section__text animate-on-scroll">
-                    The Meta-Analysis Academy is the ultimate training in systematic reviews and meta-analyses. The program guides participants from core concepts through project development, rigorous application of appropriate methodologies, conduction of statistical analyses, and preparation of scientific manuscripts.
-                </p>
-            </div>
+      </div>
+    </div>
+    <!-- Journals label (hero bg) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+      <p class="text-center text-navy font-semibold reveal" style="font-size:42px">
+        Journals our students have <strong>published in</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2 – JOURNALS LOGOS BANNER
+  ============================================================ -->
+  <section class="bg-navy py-10 overflow-hidden" aria-label="Journals our students have published in">
+    <div class="logos-carousel">
+      <div class="logos-track">
+
+        <!-- set 1 -->
+        <img src="img/logos-carrosel/lancelet.png" alt="The Lancet Global Health"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 19.png" alt="JAMA"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 125.png" alt="Critical Care"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/association anaesthetists.png" alt="Association of Anaesthetists"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 126.png" alt="JACC"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 127.png" alt="British Association of Dermatologists"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+
+        <!-- set 2 -->
+        <img src="img/logos-carrosel/lancelet.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 19.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 125.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/association anaesthetists.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 126.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 127.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+
+        <!-- set 3 -->
+        <img src="img/logos-carrosel/lancelet.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 19.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 125.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/association anaesthetists.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 126.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+        <img src="img/logos-carrosel/Group 127.png" alt="" aria-hidden="true"
+          class="h-8 shrink-0 object-contain brightness-0 invert opacity-80" />
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 3 – DISCLAIMER + CHALLENGES
+  ============================================================ -->
+  <section class="bg-white py-6" aria-label="Disclaimer">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-xs text-gray-500 leading-relaxed max-w-3xl mx-auto">
+        Journals and organizations named on this site are not affiliated with the Meta-Analysis Academy; no financial or
+        legal ties are implied.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white py-20" id="about" aria-label="Challenges we address">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14 reveal">
+        <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-gray-900">
+          <span class="font-black">CHALLENGES</span>
+          <span class="font-normal"> WE ADDRESS</span>
+        </h2>
+        <p class="mt-3 text-gray-500 text-base max-w-sm mx-auto leading-relaxed">
+          We know that an academic and scientific career can be challenging.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger">
+
+        <!-- Card 1 -->
+        <article class="reveal border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="font-bold text-gray-900 text-[15px] leading-snug">Lack of time</h3>
+            <svg class="w-8 h-8 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <path stroke-linecap="round" d="M12 7v5l3 3" />
+            </svg>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Balancing professional responsibilities with research demands often leaves little time for structured
+            academic work.
+          </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="reveal border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="font-bold text-gray-900 text-[15px] leading-snug">Lack of Qualified Mentorship</h3>
+            <svg class="w-8 h-8 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+            </svg>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Many professionals lack access to experienced guidance to support research design and decision-making.
+          </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="reveal border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="font-bold text-gray-900 text-[15px] leading-snug">Few Opportunities for Academic Recognition</h3>
+            <svg class="w-8 h-8 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+            </svg>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Limited visibility and recognition can slow career progression and professional credibility.
+          </p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="reveal border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="font-bold text-gray-900 text-[15px] leading-snug">Difficulty Publishing Research</h3>
+            <svg class="w-8 h-8 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Navigating journal requirements, peer review, and manuscript standards can be complex and discouraging.
+          </p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="reveal border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="font-bold text-gray-900 text-[15px] leading-snug">Difficulty with Applied Statistics</h3>
+            <svg class="w-8 h-8 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+            </svg>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Interpreting data and choosing the correct analytical methods remains a common challenge in research
+            projects.
+          </p>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="reveal border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h3 class="font-bold text-gray-900 text-[15px] leading-snug">Lack of Scientific Networking</h3>
+            <svg class="w-8 h-8 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+            </svg>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Building meaningful connections within the scientific community is often difficult without proper support.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 4 – WHAT WE DO
+  ============================================================ -->
+  <section class="py-20" id="program" aria-label="What we do" style="background:#051532">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Laptop image + copy -->
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+        <div class="reveal flex justify-center items-center">
+          <img src="img/plataform-laptop.png" alt="Meta-Analysis Academy platform on laptop"
+            class="w-full max-w-xl float-laptop drop-shadow-2xl" />
         </div>
-    </section>
 
-    <!-- Why Section -->
-    <section class="section section--light section--why">
-        <div class="container">
-            <div class="section__header">
-                <h2 class="section__title animate-on-scroll">Why conduct a systematic review<br/>and meta-analysis?</h2>
-                <p class="section__subtitle--dark animate-on-scroll">There are three main reasons - autonomy, impact, and speed</p>
-            </div>
-
-            <div class="cards cards--light">
-                <article class="card card--light animate-on-scroll">
-                    <div class="card__number">01.</div>
-                    <h3 class="card__title card__title--dark">Autonomy.</h3>
-                    <p class="card__text card__text--dark">
-                        Systematic reviews and meta-analyses enable you to publish from anywhere in the world. They do not require ethics committee approval, mentorship, statistical consultation, or institutional support. Affiliation with a university or hospital is not necessary. All that is needed is a computer, internet access, and the methodological expertise provided by our training.
-                    </p>
-                </article>
-
-                <article class="card card--light animate-on-scroll">
-                    <div class="card__number">02.</div>
-                    <h3 class="card__title card__title--dark">Impact.</h3>
-                    <p class="card__text card__text--dark">
-                        You have likely come across an evidence pyramid during your healthcare training. Systematic reviews and meta-analyses occupy its highest level, representing the strongest evidence. Mastering these methods enables you to produce research with significant impact. Rather than focusing on case reports or lower-tier studies, develop the expertise to conduct systematic reviews and meta-analyses, publish in leading journals, and present at prestigious international conferences.
-                    </p>
-                </article>
-
-                <article class="card card--light animate-on-scroll">
-                    <div class="card__number">03.</div>
-                    <h3 class="card__title card__title--dark">Speed.</h3>
-                    <p class="card__text card__text--dark">
-                        You may have experienced the frustration of having a project delayed for months awaiting ethics committee approval or the extensive time required to collect data from medical records. Systematic reviews and meta-analyses eliminate these obstacles. With the methodologies we teach, the typical timeframe to complete a systematic review and meta-analysis - from conception to journal submission - can be of approximately 5 to 7 weeks.
-                    </p>
-                </article>
-            </div>
+        <div class="reveal text-white" style="transition-delay:.1s">
+          <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-6">WHAT WE DO</h2>
+          <p class="text-white/90 text-base leading-relaxed mb-4">
+            <strong class="text-white">The Meta-Analysis Academy</strong> provides end-to-end training in
+            systematic reviews and meta-analyses – from idea generation and protocol development to
+            analysis and manuscript preparation – so you can publish independently and accelerate your
+            career progression.
+          </p>
+          <p class="text-white/70 text-sm leading-relaxed mb-8">
+            We do not guarantee publications; authors remain responsible for their work.
+          </p>
+          <a href="#"
+            class="flex items-center justify-center w-full py-4 rounded-lg btn-gradient text-base shadow-lg shadow-navy/30">
+            Learn more about our mission
+          </a>
         </div>
-    </section>
 
-    <!-- Statistics Section -->
-    <section class="section section--stats">
-        <div class="container">
-            <div class="stats__grid">
-                <div class="stats__content animate-on-scroll">
-                    <h2 class="stats__number"><span class="counter" data-target="100">0</span>+ countries reached</h2>
-                    <p class="stats__description">teaching students to publish high-impact articles independently.</p>
-                    <div class="stats__items">
-                        <div class="stats__item">
-                            <span class="stats__value"><span class="counter" data-target="418">0</span>+</span>
-                            <span class="stats__label">participation in<br/>congresses.</span>
-                        </div>
-                        <div class="stats__item">
-                            <span class="stats__value"><span class="counter" data-target="329">0</span>+</span>
-                            <span class="stats__label">participation in<br/>papers.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="stats__image animate-on-scroll">
-                    <img src="assets/grupo_foto.png" alt="Meta-Analysis Academy students" loading="lazy" onerror="this.style.display='none'">
-                </div>
-            </div>
+      </div>
+
+      <!-- Why section -->
+      <div class="mt-24">
+
+        <div class="mb-6 reveal">
+          <div class="flex items-end gap-6">
+            <h2 class="text-3xl sm:text-4xl text-white font-light leading-tight shrink-0">
+              Why conduct a systematic<br />
+              review and <strong class="font-extrabold">meta-analysis?</strong>
+            </h2>
+            <img src="img/Line.png" alt="" class="flex-1 min-w-0 mb-2" aria-hidden="true" />
+          </div>
         </div>
-    </section>
 
-    <!-- Mentor Section -->
-    <section class="section section--light section--mentor" id="mentor">
-        <div class="container">
-            <div class="mentor__grid">
-                <div class="mentor__image animate-on-scroll">
-                    <img src="assets/mentor.avif" alt="Rhanderson Cardoso, MD, FACC" loading="lazy" onerror="this.style.display='none'">
-                </div>
-                <div class="mentor__content animate-on-scroll">
-                    <p class="mentor__label">The Founder and Lead Mentor in The Program</p>
-                    <h2 class="mentor__name">Rhanderson Cardoso,<br/>MD, FACC</h2>
-                    <p class="mentor__bio">
-                        Dr. Cardoso graduated from the Federal University of Goiás and completed his medical residency at the University of Miami, where he served as chief resident. He has been honored with several teaching awards, including the Rhanderson Cardoso Service Award at the University of Miami and the Junior Faculty Teaching Award from Harvard Medical School's Cardiovascular Division.
-                    </p>
-                    <p class="mentor__bio">
-                        His journey was made possible through God's blessings and the opportunities that came his way through scientific publications. Dr. Cardoso mastered systematic reviews and meta-analyses early on and has since authored over 90 papers in leading international journals. His work has accumulated more than 2,500 citations and is referenced in guidelines by the American Heart Association, American College of Cardiology, and European Society of Cardiology.
-                    </p>
-                    <p class="mentor__bio">
-                        Through Meta Academy, also known as the Meta-Analysis Academy, Dr. Cardoso now teaches healthcare professionals from around the world how to follow a similar path - building strong scientific publications with autonomy through systematic reviews and meta-analyses, enabling them to build influential careers.
-                    </p>
-                    <p class="mentor__disclaimer">
-                        *The Meta-Analysis Academy is an independent organization and is not affiliated with the institutions mentioned above.
-                    </p>
-                </div>
-            </div>
+        <p class="text-white/70 text-base mb-10 reveal">There are three main reasons – autonomy, impact, and speed.</p>
+
+        <div class="grid sm:grid-cols-3 gap-5 stagger">
+
+          <article class="reveal bg-navy-dark rounded-2xl p-7 hover:bg-white/5 transition-colors">
+            <h3 class="font-bold text-white text-xl mb-4">Autonomy.</h3>
+            <p class="text-white/70 text-sm leading-relaxed">
+              Publish from anywhere without institutional affiliation or IRB approval for secondary research. A laptop,
+              internet, and the right methods are enough.
+            </p>
+          </article>
+
+          <article class="reveal bg-navy-dark rounded-2xl p-7 hover:bg-white/5 transition-colors">
+            <h3 class="font-bold text-white text-xl mb-4">Impact.</h3>
+            <p class="text-white/70 text-sm leading-relaxed">
+              At the top of the evidence hierarchy, well-executed reviews and meta-analyses influence practice,
+              citations, and visibility.
+            </p>
+          </article>
+
+          <article class="reveal bg-navy-dark rounded-2xl p-7 hover:bg-white/5 transition-colors">
+            <h3 class="font-bold text-white text-xl mb-4">Speed.</h3>
+            <p class="text-white/70 text-sm leading-relaxed">
+              With the methodologies we teach, the typical timeframe to complete a systematic review and meta-analysis –
+              from conception to journal submission – can be of approximately 5 to 7 weeks.
+            </p>
+          </article>
+
         </div>
-    </section>
 
-    <!-- Teaching Approach Section -->
-    <section class="section section--light section--approach">
-        <div class="container">
-            <div class="section__header">
-                <p class="section__subtitle animate-on-scroll">OUR TEACHING APPROACH</p>
-                <h2 class="section__title animate-on-scroll">How does the Meta-Analysis Academy work?</h2>
-            </div>
-            <div class="section__content">
-                <p class="section__text">
-                    Each of the 10 modules combines both theoretical and practical elements. First, you will have a recorded lesson focused on theory and core concepts, with a unique instructional approach. Next, you will have the chance to apply these concepts through a hands-on exercise grounded in current literature, developing the skills necessary to undertake such steps independently.
-                </p>
-                <p class="section__text" style="margin-top: var(--spacing-md);">
-                    Lastly, a live practical session is held, during which the exercise is reviewed collaboratively with Dr. Cardoso and other teachers in the course. These interactive classes, which are called Curricular Practical Training (CPTs), encourage engagement from all participants through questions and discussions. Sessions are scheduled weekly on Sundays (for the English-speaking cohorts). If you are unable to attend the live sessions, recordings are made available for your review. Access to the program is for a full year from the onset of classes.
-                </p>
-                <p class="section__text" style="margin-top: var(--spacing-md); font-style: italic; opacity: 0.8;">
-                    Disclaimer: The Meta-Analysis Academy does not guarantee publications. The course provides comprehensive instruction on (1) how to develop research ideas; (2) methods; (3) statistics; and scientific writing for systematic reviews and meta-analyses, with full support provided to students. Publications are the sole responsibility of the authors.
-                </p>
-                <p class="approach__check">Check out the modules below:</p>
-            </div>
+        <div class="flex justify-center mt-10 reveal">
+          <a href="#"
+            class="inline-flex items-center justify-center px-7 py-3 rounded-lg border border-white/30 text-white text-sm font-semibold hover:bg-white/10 transition-colors">
+            Learn more about our program
+          </a>
         </div>
-    </section>
 
-    <!-- Modules Accordion Section -->
-    <section class="section section--light section--modules" id="modules">
-        <div class="container">
-            <div class="modules__accordion">
-                <h3 class="modules__title">Modules</h3>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Introduction Module</span>
-                    </button>
-                    <div class="module__content">
-                        <p>Learn the foundations of systematic reviews and meta-analyses.</p>
-                    </div>
-                </div>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Module 1: How to Develop Ideas</span>
-                    </button>
-                    <div class="module__content">
-                        <p>This module focuses on how to generate and develop strong ideas for meta-analysis. You will learn where good research questions come from, how to recognize the most relevant methods to explore them, and how to turn an initial concept into a concrete project through real examples.</p>
-                        <ul>
-                            <li>What are the 10 most important methods for conducting a meta-analysis?</li>
-                            <li>How to apply these methods step by step in practice.</li>
-                            <li>Practical examples presented by professor Cardoso and students.</li>
-                            <li>Common pitfalls when developing meta-analysis ideas and how to avoid them.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Module 2: The Research Question</span>
-                    </button>
-                    <div class="module__content">
-                        <p>In this module, we will focus on how to properly define your research question — the cornerstone of every systematic review and meta-analysis. A well-structured question ensures clarity and guarantees that your review compares studies that are truly similar.</p>
-                        <ul>
-                            <li>How to define a meta-analysis question using the PICOTT framework.</li>
-                            <li>Why it is important to pre-specify all components of the PICOTT question.</li>
-                            <li>How to avoid comparing "apples and oranges" in your systematic review.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Module 3: Viability and Inclusion/Exclusion Criteria</span>
-                    </button>
-                    <div class="module__content">
-                        <p>This module focuses on how to ensure the viability of your meta-analysis from the very beginning. You will learn what to do if a meta-analysis has already been published on your topic, how to refine and strengthen your research question, and how to design clear inclusion and exclusion criteria to guide your study selection.</p>
-                        <ul>
-                            <li>How to assess the viability of your meta-analysis idea.</li>
-                            <li>What to do when a meta-analysis on your topic has already been published.</li>
-                            <li>Methods to refine and improve your research question.</li>
-                            <li>How to create and apply inclusion and exclusion criteria.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Module 4: Search Strategy</span>
-                    </button>
-                    <div class="module__content">
-                        <p>This module focuses on how to build and refine a search strategy specifically for systematic reviews and meta-analyses. You will learn to identify the right keywords, structure your queries with logic and precision, and test your strategy to make sure you capture all relevant studies without introducing unnecessary noise.</p>
-                        <ul>
-                            <li>Expanding your search with synonyms and related terms to capture all eligible studies.</li>
-                            <li>Using Boolean operators to structure a systematic and reproducible search.</li>
-                            <li>Testing and refining your strategy to ensure completeness and relevance in systematic reviews.</li>
-                            <li>Applying advanced techniques with controlled vocabulary (e.g., MeSH terms) to optimize meta-analysis searches.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Module 5: Medical Databases and Protocol Registration</span>
-                    </button>
-                    <div class="module__content">
-                        <p>This module explores how to expand your systematic review and meta-analysis beyond PubMed by searching other key medical databases. You will also learn how to write and register a protocol, a crucial step to ensure transparency and reproducibility in your work.</p>
-                        <ul>
-                            <li>Creating customized search strategies for major medical databases such as Pubmed, Cochrane Library and Embase.</li>
-                            <li>How to download and export studies from each database.</li>
-                            <li>Writing a clear and structured protocol for your systematic review and meta-analysis.</li>
-                            <li>How to register your protocol in PROSPERO.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Module 6: Study Screening and Selection</span>
-                    </button>
-                    <div class="module__content">
-                        <p>This module explains the process of screening and selecting studies for your systematic review and meta-analysis, from organizing references to final inclusion decisions.</p>
-                        <ul>
-                            <li>Using reference managers to organize and deduplicate studies.</li>
-                            <li>Screening studies based on titles and abstracts.</li>
-                            <li>Choosing the final studies for inclusion in the meta-analysis.</li>
-                            <li>Documenting the selection process with a PRISMA flow diagram (Figure 1).</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Module 7: Data Extraction</span>
-                    </button>
-                    <div class="module__content">
-                        <p>This module focuses on how to systematically extract and organize data from the studies included in your systematic review and meta-analysis. You will learn how to select the right outcomes, decide which variables to collect, and build a clear and well-structured Table 1.</p>
-                        <ul>
-                            <li>Collecting data from included studies in an organized and consistent way.</li>
-                            <li>Selecting primary and secondary outcomes for your meta-analysis.</li>
-                            <li>Choosing the variables that will make up Table 1.</li>
-                            <li>Building a clear and structured Table 1 to summarize study characteristics.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Module 8: Statistics</span>
-                    </button>
-                    <div class="module__content">
-                        <p>This module provides a practical overview of the main statistical tools and techniques used in systematic reviews and meta-analyses. You will learn how to generate and interpret different plots, explore heterogeneity, perform subgroup and sensitivity analyses, and conduct various types of meta-analyses using leading statistical software.</p>
-                        <ul>
-                            <li>Creating and interpreting forest plots to summarize study results.</li>
-                            <li>Understanding heterogeneity: what it means, how to measure it, and how to explore it.</li>
-                            <li>Conducting subgroup analyses and building funnel plots to assess publication bias.</li>
-                            <li>Performing meta-analyses with binary data, continuous data, effect sizes, network meta-analysis, single-arm studies, and diagnostic accuracy.</li>
-                            <li>Choosing outcomes and ensuring the right statistical model is applied for each type of data.</li>
-                            <li>Using software such as R, STATA, and RevMan to run analyses and generate outputs.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Module 9: Writing</span>
-                    </button>
-                    <div class="module__content">
-                        <p>This module focuses on how to transform your systematic review and meta-analysis into a clear, well-structured scientific manuscript. You will learn step by step how to write each section, follow journal requirements, and make the writing process more efficient and enjoyable.</p>
-                        <ul>
-                            <li>Writing an engaging introduction that highlights the relevance of your research question.</li>
-                            <li>Describing methods in a transparent and reproducible way.</li>
-                            <li>Presenting results clearly with the proper use of tables and figures.</li>
-                            <li>Developing a strong discussion that interprets findings and situates them in the context of the literature.</li>
-                            <li>Finalizing your manuscript: conclusions, references, and journal submission process.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Module 10: Submission and Editorial Review</span>
-                    </button>
-                    <div class="module__content">
-                        <p>This module covers the final step of your systematic review and meta-analysis: preparing and submitting your manuscript to a scientific journal. You will learn how to choose the right journal, adapt your manuscript to submission guidelines, and handle the peer-review process.</p>
-                        <ul>
-                            <li>Adapting your manuscript to journal-specific submission requirements.</li>
-                            <li>Preparing cover letters and required materials.</li>
-                            <li>Understanding the peer-review process and how to respond to reviewers.</li>
-                            <li>Navigating revisions, resubmissions, and final acceptance.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="module__item">
-                    <button class="module__header">
-                        <span class="module__icon">+</span>
-                        <span class="module__name">Additional Module: Quality Assessment</span>
-                    </button>
-                    <div class="module__content">
-                        <p>This module teaches you how to critically appraise the quality of evidence in systematic reviews and meta-analyses. You will learn how to assess the risk of bias in individual studies, apply established tools for different study designs, and evaluate the overall certainty of evidence using the GRADE approach.</p>
-                        <ul>
-                            <li>Assessing the risk of bias in studies included in your meta-analysis.</li>
-                            <li>Using the RoB-2 tool for randomized controlled trials.</li>
-                            <li>Applying the ROBINS-I tool for non-randomized studies.</li>
-                            <li>Evaluating the certainty of evidence with the GRADE approach.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 5 – MEET YOUR MENTOR
+  ============================================================ -->
+  <section class="bg-white py-20" id="mentor" aria-label="Meet your mentor">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-center reveal">
+
+        <div class="flex flex-col justify-center">
+          <h2 class="font-bold text-gray-900 mb-5 leading-tight" style="font-size:48px">Meet your mentor</h2>
+          <p class="text-gray-600 leading-relaxed" style="font-size:18px">
+            Rhanderson Cardoso, MD, FACC, is a cardiologist at Brigham and Women's
+            Hospital, Harvard Medical School, with a master's degree in cardiovascular
+            epidemiology from Johns Hopkins. A graduate of the Federal University of Goiás,
+            he completed his residency at the University of Miami, where he served as
+            chief resident and received multiple teaching excellence awards, including the
+            Junior Faculty Teaching Award.
+          </p>
+          <div class="mt-8">
+            <a href="founder.html"
+              class="inline-flex items-center justify-center px-6 py-4 rounded-lg btn-gradient text-sm w-full sm:w-auto transition-all">
+              Learn more about Rhanderson Cardoso
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Teaching Methods Section -->
-    <section class="section section--dark section--methods">
-        <div class="container">
-            <div class="methods__grid">
-                <div class="method__card animate-on-scroll">
-                    <h3 class="method__title">Lectures</h3>
-                    <p class="method__description">
-                        The lectures provide a solid foundation of knowledge, explaining fundamental concepts and essential approaches for understanding the subject.
-                    </p>
-                </div>
-                <div class="method__card animate-on-scroll">
-                    <h3 class="method__title">Exercises</h3>
-                    <p class="method__description">
-                        Exercises are practical activities, real-world examples, designed to train students how to conduct each step independently.
-                    </p>
-                </div>
-                <div class="method__card animate-on-scroll">
-                    <h3 class="method__title">Curricular Practical Training (CPTs)</h3>
-                    <p class="method__description">
-                        CPTs are practical sessions, focused on the direct application of concepts learned in the lecture and exercises, with real examples, case studies, and step-by-step demonstrations.
-                    </p>
-                </div>
-            </div>
+        <div class="relative min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden">
+          <img src="img/mentor-rhanderson.png" alt="Rhanderson Cardoso, MD FACC"
+            class="w-full h-full object-cover object-top" />
         </div>
-    </section>
 
-    <!-- Results Carousel Section -->
-    <section class="section section--light section--results" id="results">
-        <div class="container">
-            <div class="section__header">
-                <p class="section__subtitle">RESULTS THAT SPEAK FOR THEMSELVES</p>
-                <h2 class="section__title">See the strength and impact of the publications.</h2>
-                <p class="section__text">
-                    When you have a validated method and the right guidance, growth is inevitable.<br/>
-                    See how our students are standing out in the field with their publications!
-                </p>
-            </div>
-        </div>
-        <div class="marquee__wrapper">
-            <div class="marquee__track marquee__track--left">
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2001.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2002.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2003.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2004.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2005.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2006.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2007.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2008.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2009.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2010.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2011.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2012.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2013.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card"><img loading="lazy" src="results/Card%20Result%2014.png" alt="Student achievement"></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2001.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2002.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2003.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2004.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2005.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2006.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2007.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2008.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2009.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2010.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2011.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2012.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2013.png" alt=""></div>
-                <div class="carousel__item carousel__item--card" aria-hidden="true"><img loading="lazy" src="results/Card%20Result%2014.png" alt=""></div>
-            </div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Success Stories Carousel -->
-    <section class="section section--light section--stories">
-        <div class="container">
-            <div class="section__header">
-                <p class="section__subtitle">LEARN FROM THE SUCCESS STORIES OF THOSE WHO HAVE ALREADY TRANSFORMED THEIR CAREERS THROUGH THIS TRAINING</p>
-                <h2 class="section__title">Strong publications, with autonomy,<br/>transform careers.</h2>
-            </div>
-        </div>
-        <div class="marquee__wrapper">
-            <div class="marquee__track marquee__track--right">
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2001.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2002.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2003.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2004.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2005.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2006.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2007.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2008.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2009.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2010.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2011.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2012.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only"><img loading="lazy" src="alunos/Card%20Person%2013.png" alt="Student story"></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2001.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2002.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2003.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2004.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2005.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2006.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2007.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2008.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2009.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2010.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2011.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2012.png" alt=""></div>
-                <div class="profile__card profile__card--img-only" aria-hidden="true"><img loading="lazy" src="alunos/Card%20Person%2013.png" alt=""></div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Video Testimonials Section -->
-    <section class="section section--light section--testimonials">
-        <div class="container">
-            <div class="testimonials__grid testimonials__grid--stack">
-                <div class="testimonial__card">
-                    <div class="video__thumbnail video__thumbnail--yt">
-                        <iframe
-                            loading="lazy"
-                            src="https://www.youtube.com/embed/1qrAYZo9gQQ"
-                            title="Otavio Cosendey testimonial"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="testimonial__info">
-                        <h4 class="testimonial__name">Otavio Cosendey</h4>
-                        <p class="testimonial__quote">"Before the Meta-Analysis Academy, I didn't have any publications. Recently, I had one abstract accepted for presentation on American College of Cardiology."</p>
-                        <div class="testimonial__rating">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial__card">
-                    <div class="video__thumbnail video__thumbnail--yt">
-                        <iframe
-                            loading="lazy"
-                            src="https://www.youtube.com/embed/DzVRxhqBYuY?start=1"
-                            title="Cintia Gomes testimonial"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="testimonial__info">
-                        <h4 class="testimonial__name">Cintia Gomes</h4>
-                        <p class="testimonial__quote">"I didn't have research experience before, but in a year and a half I published 7 meta-analyses and more than 12 abstracts. With that, I went from just 2 interviews to 8, and finally matched."</p>
-                        <div class="testimonial__rating">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial__card">
-                    <div class="video__thumbnail video__thumbnail--yt">
-                        <iframe
-                            loading="lazy"
-                            src="https://www.youtube.com/embed/dZKr0W4kNAs"
-                            title="Camila Guida testimonial"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="testimonial__info">
-                        <h4 class="testimonial__name">Camila Guida</h4>
-                        <p class="testimonial__quote">"The community in the Meta-Analysis Academy is one of the most inspiring parts of the journey. Working with such incredible and hardworking people keeps me motivated and committed - you simply can't be the one to drop the ball when you're surrounded by excellence."</p>
-                        <div class="testimonial__rating">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial__card">
-                    <div class="video__thumbnail video__thumbnail--yt">
-                        <iframe
-                            loading="lazy"
-                            src="https://www.youtube.com/embed/uHOnRJx2dtU"
-                            title="Alonzo Prata testimonial"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="testimonial__info">
-                        <h4 class="testimonial__name">Alonzo Prata</h4>
-                        <p class="testimonial__quote">"As a medical student, you don't feel that very important to the medical field. I just came back from Atlanta, where I presented in the ACC 24 my abstract as a first author. When I received the email, I was very surprised; I didn't even realize it was possible."</p>
-                        <div class="testimonial__rating">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ============================================================
+       SECTION 6 – QUOTE
+  ============================================================ -->
+  <section class="bg-navy-deeper py-24" aria-label="Featured quote">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <div class="text-white/40 text-8xl font-serif leading-none mb-4 select-none">&ldquo;</div>
+      <blockquote class="text-white text-2xl sm:text-3xl font-semibold leading-snug">
+        Structured learning that helps you master<br class="hidden sm:block" />
+        efficiently and apply with confidence
+      </blockquote>
+      <div class="text-white/40 text-8xl font-serif leading-none mt-4 select-none">&rdquo;</div>
+    </div>
+  </section>
 
-    <!-- Waitlist Form Section -->
-    <section class="section section--dark section--waitlist" id="waitlist">
-        <div class="container">
-            <div class="waitlist__content">
-                <div class="section__header">
-                    <p class="section__subtitle">RESULTS THAT SPEAK FOR THEMSELVES</p>
-                    <h2 class="section__title">Build the career of your choice through rigorous and high-impact scientific publications.</h2>
-                </div>
-                <form id="leadForm" class="waitlist__form" novalidate>
 
-                    <div class="form-group">
-                        <label for="name" class="sr-only">Full name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter your full name"
-                            required
-                            aria-required="true"
-                            autocomplete="name"
-                            class="form__input"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="sr-only">E-mail</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter your best e-mail"
-                            required
-                            aria-required="true"
-                            autocomplete="email"
-                            class="form__input"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone" class="sr-only">Phone</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="Enter your phone"
-                            required
-                            aria-required="true"
-                            autocomplete="tel"
-                            class="form__input"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="education" class="sr-only">Select an option</label>
-                        <select id="education" name="education" required aria-required="true" class="form__select">
-                            <option value="">Select an option</option>
-                            <option value="Physician">Physician</option>
-                            <option value="Medical Intern">Medical Intern</option>
-                            <option value="Clinical Cycle (medicine)">Clinical Cycle (medicine)</option>
-                            <option value="Basic Cycle (medicine)">Basic Cycle (medicine)</option>
-                            <option value="Other health students">Other health students</option>
-                            <option value="Other health professionals">Other health professionals</option>
-                            <option value="Other unrelated areas">Other unrelated areas</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn btn--submit" id="submitBtn">
-                        <span class="btn-text">JOIN THE WAITLIST</span>
-                        <span class="btn-subtext">Click here to sign up</span>
-                    </button>
-
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section section--dark section--faq">
-        <div class="container">
-            <h2 class="faq__title">FAQ</h2>
-            <div class="faq__accordion">
-                <div class="faq__item">
-                    <button class="faq__header">
-                        <span class="faq__question">Does the Meta Academy guarantee student's publications?</span>
-                        <span class="faq__icon">+</span>
-                    </button>
-                    <div class="faq__content">
-                        <p>No. We teach how to develop ideas and the entire methodology, statistics, and writing of systematic reviews and meta-analyses at the highest level. We also provide full support for conducting impactful projects, with mentoring sessions and connections within our strong research community. However, completing the projects and achieving individual results depends on each student. Our students' outcomes speak for themselves — both in the number and the strength of their publications.</p>
-                    </div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__header">
-                        <span class="faq__question">Who is the course instructor?</span>
-                        <span class="faq__icon">+</span>
-                    </button>
-                    <div class="faq__content">
-                        <p>The Meta-Analysis Academy is led by Dr. Rhanderson Cardoso.</p>
-                        <p>Dr. Cardoso is currently Assistant Professor of Medicine at Harvard Medical School. He is originally from Brazil, where he completed medical school. He was a resident and chief resident at the University of Miami, Jackson Memorial Hospital. He published several high-quality papers as a resident and matched in Cardiology at The Johns Hopkins Hospital. He then transitioned to Brigham and Women's Hospital, Harvard Medical School, initially as an imaging fellow, then chief fellow, then attending.</p>
-                        <p>Currently, Dr. Cardoso has approximately 100 peer-reviewed publications and more than 2500 citations in the literature, including from international guidelines, like the American College of Cardiology, American Heart Association and European Society of Cardiology.</p>
-                        <p>He is passionate about medical education, having held various teaching positions throughout his career. He is the recipient of multiple teaching awards, including the inaugural recipient of the Rhanderson Cardoso Service Award at the University of Miami, given annually for nearly 10 years to the resident who has exemplary service in education and dedication to the program.</p>
-                        <p>Dr. Cardoso is the founder of The Meta-Analysis Academy and the ECG Academy by Rhanderson Cardoso. His training programs have transformed the skillsets and careers of doctors and medical students in more than 120 countries worldwide.</p>
-                        <p>Important: The Meta-Analysis Academy is not affiliated with Harvard Medical School or any other of the institutions mentioned here. Opinions expressed here are exclusively those of Dr. Cardoso and The Meta-Analysis Academy team.</p>
-                        <p>You can view more about Dr. Cardoso's publications in this link:<br><a href="#" class="faq__link">Dr. Rhanderson Cardoso - Publications</a></p>
-                    </div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__header">
-                        <span class="faq__question">Is the Meta-Analysis Academy suitable for my level of training?</span>
-                        <span class="faq__icon">+</span>
-                    </button>
-                    <div class="faq__content">
-                        <p>The program is suitable for anyone who wants to learn how to publish high-quality systematic review and meta-analysis, regardless of background level of clinical training or research knowledge.</p>
-                        <p>Our didactic lectures start from very basic concepts, in the Introduction Module, and move forward step-by-step through progressively more advanced topics. This structure allows for foundational training for beginners, but also a review of important early topics before jumping into more advanced training in the later modules.</p>
-                    </div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__header">
-                        <span class="faq__question">How long will I have access to the course content?</span>
-                        <span class="faq__icon">+</span>
-                    </button>
-                    <div class="faq__content">
-                        <p>You will have access to all course content until February 2027.</p>
-                    </div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__header">
-                        <span class="faq__question">Does the Meta-Analysis Academy provide a certificate?</span>
-                        <span class="faq__icon">+</span>
-                    </button>
-                    <div class="faq__content">
-                        <p>Yes, we do. The certificate lists all the topics discussed in the program.</p>
-                    </div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__header">
-                        <span class="faq__question">Does The Meta-Analysis Academy have any institutional affiliation?</span>
-                        <span class="faq__icon">+</span>
-                    </button>
-                    <div class="faq__content">
-                        <p>The Meta-Analysis Academy is authored exclusively by Dr. Rhanderson Cardoso and his collaborators. It is not affiliated with the Meta-Analysis course he teaches at Harvard University. The program is also not affiliated with Johns Hopkins University, Brigham and Women's Hospital, or other institutions.</p>
-                    </div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__header">
-                        <span class="faq__question">What is the schedule of the Meta-Analysis Academy?</span>
-                        <span class="faq__icon">+</span>
-                    </button>
-                    <div class="faq__content">
-                        <p>You can check out our full schedule <a href="#" class="faq__link">here</a>.</p>
-                    </div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__header">
-                        <span class="faq__question">Where can I get more questions answered?</span>
-                        <span class="faq__icon">+</span>
-                    </button>
-                    <div class="faq__content">
-                        <p><strong>WhatsApp</strong><br><a href="tel:+5521964846034" class="faq__link">+55 21 96484-6034</a></p>
-                        <p><strong>Instagram:</strong><br><a href="https://www.instagram.com/metaanalysis.academy" class="faq__link">@metaanalysis.academy</a><br><a href="https://www.instagram.com/rhandersoncardoso.md" class="faq__link">@rhandersoncardoso.md</a></p>
-                        <p><strong>Email:</strong><br><a href="mailto:contact@metaanalysis.academy" class="faq__link">contact@metaanalysis.academy</a></p>
-                        <p><strong>YouTube:</strong><br><a href="https://www.youtube.com/@metaanalysis.academy" class="faq__link">www.youtube.com/@metaanalysis.academy</a></p>
-                        <p><strong>X:</strong><br><a href="#" class="faq__link">metaacademy.ofc</a></p>
-                    </div>
-                </div>
-                <div class="faq__item">
-                    <button class="faq__header">
-                        <span class="faq__question">How can I invite my friends to join the Meta-Analysis Academy?</span>
-                        <span class="faq__icon">+</span>
-                    </button>
-                    <div class="faq__content">
-                        <p>Consider inviting your friends to join as well. You can share the waitlist link with them:<br><a href="https://metaanalysisacademy.com/waitlist-meta-v1" class="faq__link">https://metaanalysisacademy.com/waitlist-meta-v1</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Modal -->
-    <div class="video__modal" id="videoModal">
-        <div class="modal__overlay"></div>
-        <div class="modal__content">
-            <button class="modal__close">&times;</button>
-            <video id="modalVideo" controls>
-                <source src="" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+  <!-- ============================================================
+       SECTION 7 – RESULTS THAT SPEAK FOR THEMSELVES
+  ============================================================ -->
+  <section class="py-20 bg-white section-marquee" id="results">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <p class="text-brand font-bold uppercase tracking-wider text-sm mb-3">RESULTS THAT SPEAK FOR THEMSELVES</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-6">See the strength and impact of the publications.
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          When you have a validated method and the right guidance, growth is inevitable.<br class="hidden sm:block" />
+          See how our students are standing out in the field with their publications!
+        </p>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer__text">&copy; 2026 Meta-Analysis Academy. All rights reserved.</p>
+    <!-- Results Marquee -->
+    <div class="marquee-wrapper">
+      <div class="marquee-track marquee-track--left">
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 01.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 02.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 03.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 04.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 05.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 06.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 07.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 08.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 09.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 10.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 11.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 12.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 13.png" alt="Student Result"></div>
+        <div class="result-card"><img loading="lazy" src="img/results/Card Result 14.png" alt="Student Result"></div>
+        <!-- Duplicate for loop -->
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 01.png" alt="">
         </div>
-    </footer>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 02.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 03.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 04.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 05.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 06.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 07.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 08.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 09.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 10.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 11.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 12.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 13.png" alt="">
+        </div>
+        <div class="result-card" aria-hidden="true"><img loading="lazy" src="img/results/Card Result 14.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js" defer></script>
+  <!-- ============================================================
+       SECTION 8 – SUCCESS STORIES
+  ============================================================ -->
+  <section class="py-20 bg-gray-50 section-marquee" id="stories">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <p class="text-brand font-bold uppercase tracking-wider text-sm mb-3">LEARN FROM SUCCESS STORIES</p>
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-6">Strong publications, with autonomy, transform
+          careers.</h2>
+      </div>
+    </div>
+
+    <!-- Stories Marquee -->
+    <div class="marquee-wrapper">
+      <div class="marquee-track marquee-track--right">
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 01.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 02.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 03.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 04.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 05.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 06.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 07.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 08.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 09.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 10.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 11.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 12.png" alt="Student story"></div>
+        <div class="profile-card"><img loading="lazy" src="img/alunos/Card Person 13.png" alt="Student story"></div>
+        <!-- Duplicate for loop -->
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 01.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 02.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 03.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 04.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 05.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 06.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 07.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 08.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 09.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 10.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 11.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 12.png" alt="">
+        </div>
+        <div class="profile-card" aria-hidden="true"><img loading="lazy" src="img/alunos/Card Person 13.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="bg-navy-deeper text-white py-16" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12 lg:gap-8">
+
+        <!-- Brand & Address -->
+        <div class="md:col-span-2 lg:col-span-2 space-y-8">
+          <a href="#" class="inline-block">
+            <img src="img/logo_meta.png" alt="Meta-Analysis Academy" class="h-12 object-contain brightness-0 invert" />
+          </a>
+          <div class="space-y-4 text-white/60 text-sm leading-relaxed max-w-xs">
+            <p class="font-bold text-white/80">MAA EDUCATION LTDA</p>
+            <p>
+              Avenida Tocantins, SN, Quadra 39, Lote 04,<br />
+              Centro, Mateiros, Tocantins, 77.593-000.
+            </p>
+            <p class="pt-4">&copy; MAA Education LTDA</p>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="space-y-6">
+          <h4 class="font-bold text-white text-base">Links</h4>
+          <ul class="space-y-4 text-white/60 text-sm">
+            <li><a href="founder.html" class="hover:text-white transition-colors">Our founder</a></li>
+            <li><a href="#program" class="hover:text-white transition-colors">Our mission</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors">Our ethos</a></li>
+          </ul>
+        </div>
+
+        <!-- Alumni access -->
+        <div class="space-y-6">
+          <h4 class="font-bold text-white text-base">Alumni access</h4>
+          <ul class="space-y-4 text-white/60 text-sm">
+            <li><a href="#" class="hover:text-white transition-colors">Students portal</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Publication drive</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Our social media -->
+        <div class="space-y-6">
+          <h4 class="font-bold text-white text-base">Our social media</h4>
+          <ul class="space-y-4 text-white/60 text-sm">
+            <li>
+              <a href="#" class="hover:text-white transition-colors flex items-center gap-2">
+                Instagram
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+
 </body>
+
 </html>

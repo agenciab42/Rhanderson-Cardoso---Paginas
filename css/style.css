@@ -1,0 +1,256 @@
+/* ============================================================
+   CUSTOM STYLES – Meta-Analysis Academy
+   Tailwind handles utilities; this file covers:
+   - scroll-reveal animation
+   - stagger delays
+   - smooth scroll
+============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Scroll-reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Gradient button ---------- */
+.btn-gradient {
+  background: linear-gradient(135deg, #2d4fa1 0%, #111c36 100%);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  transition: all .3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(45, 79, 161, 0.3);
+}
+
+.btn-gradient:hover::before {
+  left: 100%;
+}
+
+/* Tech points effect on hover */
+.btn-gradient::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+  background-size: 15px 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-gradient:hover::after {
+  opacity: 1;
+}
+
+.btn-gradient:active {
+  transform: scale(.97);
+}
+
+/* ---------- Logos carousel ---------- */
+.logos-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+}
+
+.logos-track {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  /* Increased gap */
+  width: max-content;
+  animation: logos-scroll 20s linear infinite;
+  /* Faster and smoother */
+}
+
+.logos-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes logos-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+  }
+
+  /* Adjusted for 3 sets of items */
+}
+
+/* ---------- Floating laptop ---------- */
+.float-laptop {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Stagger children ---------- */
+.stagger>*:nth-child(1) {
+  transition-delay: .05s;
+}
+
+.stagger>*:nth-child(2) {
+  transition-delay: .15s;
+}
+
+.stagger>*:nth-child(3) {
+  transition-delay: .25s;
+}
+
+.stagger>*:nth-child(4) {
+  transition-delay: .35s;
+}
+
+.stagger>*:nth-child(5) {
+  transition-delay: .45s;
+}
+
+.stagger>*:nth-child(6) {
+  transition-delay: .55s;
+}
+
+/* ---------- Infinite Marquee (Results & Stories) ---------- */
+.section-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-wrapper {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding: 1rem 0;
+  will-change: transform;
+}
+
+.marquee-track--left {
+  animation: marquee-left 50s linear infinite;
+}
+
+.marquee-track--right {
+  animation: marquee-right 40s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Card styles inside marquee */
+.result-card,
+.profile-card {
+  flex: 0 0 350px;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.result-card:hover,
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.result-card img,
+.profile-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .result-card {
+    flex: 0 0 280px;
+  }
+
+  .profile-card {
+    flex: 0 0 240px;
+  }
+
+  .marquee-track--left {
+    animation-duration: 35s;
+  }
+
+  .marquee-track--right {
+    animation-duration: 28s;
+  }
+}

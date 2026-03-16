@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Founder – Meta-Analysis Academy</title>
+
+    <!-- Tailwind CDN + custom tokens -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#1a2744',
+                            dark: '#111c36',
+                            deeper: '#0d1628',
+                        },
+                        brand: '#2d4fa1',
+                    },
+                    fontFamily: {
+                        sans: ['IBM Plex Sans', 'Inter', 'system-ui', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/founder.css" />
+</head>
+
+<body class="font-sans text-gray-800 antialiased bg-navy-deeper">
+
+    <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-navy-deeper border-b border-white/10">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between md:h-24 h-20 transition-all duration-300">
+
+            <!-- Logo -->
+            <a href="index.html" class="shrink-0">
+                <img src="img/logo_meta.png" alt="Meta-Analysis Academy" class="h-10 object-contain" />
+            </a>
+
+            <!-- Desktop nav -->
+            <nav class="hidden md:flex items-center gap-10 text-sm font-semibold tracking-wide text-white/70 uppercase">
+                <a href="index.html#hero" class="hover:text-white transition-colors">Home</a>
+                <a href="index.html#about" class="hover:text-white transition-colors">About Us</a>
+                <a href="index.html#program" class="hover:text-white transition-colors">Our Program</a>
+            </nav>
+
+            <!-- Desktop CTAs -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="index.html#waitlist"
+                    class="inline-flex items-center px-5 py-2 rounded-full btn-gradient text-sm tracking-wide uppercase">
+                    Join the waitlist
+                </a>
+            </div>
+
+            <!-- Mobile hamburger -->
+            <button id="menu-toggle" class="md:hidden p-2 rounded text-white/70 hover:text-white"
+                aria-label="Open menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-deeper border-t border-white/10 px-4 pb-4">
+            <nav class="flex flex-col gap-3 pt-3 text-sm font-semibold text-white/70 uppercase tracking-wide">
+                <a href="index.html#hero" class="hover:text-white">Home</a>
+                <a href="index.html#about" class="hover:text-white">About Us</a>
+                <a href="index.html#program" class="hover:text-white">Our Program</a>
+                <a href="index.html#waitlist"
+                    class="mt-2 inline-flex justify-center px-5 py-2 rounded-full btn-gradient">
+                    Join the waitlist
+                </a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- ============================================================
+       SECTION 1 – FOUNDER HERO
+  ============================================================ -->
+    <section class="pt-32 pb-20 bg-navy-deeper min-h-[80vh] flex items-center text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Left content -->
+                <div class="reveal">
+                    <p class="text-brand font-bold tracking-widest uppercase text-sm mb-6">OUR FOUNDER</p>
+                    <h1 class="text-5xl sm:text-7xl font-black leading-tight mb-8">
+                        Who is Rhanderson Cardoso,<span class="text-brand">MD, FACC?</span>
+                    </h1>
+                    <p class="text-xl text-white/70 leading-relaxed mb-12 max-w-xl">
+                        A cardiologist at Brigham and Women’s Hospital, Harvard Medical School, with cardiology training
+                        and a Master’s degree in Cardiovascular Epidemiology from Johns Hopkins.
+                    </p>
+
+                    <div class="pt-12 border-t border-white/10">
+                        <p class="text-xs text-white/40 leading-relaxed max-w-md italic">
+                            *The opinions expressed by Rhanderson Cardoso and Meta-Analysis Academy are solely their own
+                            and do not represent any institution mentioned. Meta-Analysis Academy is an independent
+                            educational initiative and is not affiliated with or endorsed by any referenced
+                            institutions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right image placeholder -->
+                <div class="reveal relative flex justify-center lg:justify-end self-end">
+                    <div class="relative w-full max-w-lg aspect-[4/5]">
+                        <img src="https://placehold.co/800x1000/0d1628/white?text=Dr.+Rhanderson+Cardoso"
+                            alt="Dr. Rhanderson Cardoso" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 2 – JOURNEY TIMELINE
+  ============================================================ -->
+    <section class="py-24 bg-navy-dark text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <p class="text-brand font-bold tracking-widest uppercase text-sm mb-4">THE JOURNEY OF RHANDERSON CARDOSO
+                </p>
+                <h2 class="text-4xl sm:text-5xl font-black italic">From Brazil to <span
+                        class="text-brand">Harvard.</span></h2>
+            </div>
+
+            <div class="timeline-container reveal">
+
+                <!-- Item 1 -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <p class="text-xs text-brand font-bold mb-2 uppercase">Tocantins, Brazil</p>
+                        <h3 class="text-2xl font-black mb-4">The Origin.</h3>
+                        <p class="text-sm text-white/60 leading-relaxed">
+                            Dr. Rhanderson Cardoso was born in Tocantins, Brazil, where his values of faith, resilience,
+                            and service to others were first shaped. These early years laid the foundation for a life
+                            dedicated to medicine, education, and global impact.
+                        </p>
+                        <div class="timeline-image">
+                            <img src="https://placehold.co/600x400/1a2744/white?text=Early+Years"
+                                alt="Early Years in Brazil">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <p class="text-xs text-brand font-bold mb-2 uppercase">Miami, United States</p>
+                        <h3 class="text-2xl font-black mb-4">Chief Resident</h3>
+                        <p class="text-sm text-white/60 leading-relaxed">
+                            He moved to the United States to complete his medical residency at the University of Miami,
+                            where he also served as chief resident. Dr. Cardoso distinguished himself as both a
+                            physician and educator — earning a prestigious award established in his own name.
+                        </p>
+                        <div class="timeline-image">
+                            <img src="https://placehold.co/600x400/1a2744/white?text=Chief+Residency"
+                                alt="Chief Residency Award">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <p class="text-xs text-brand font-bold mb-2 uppercase">Boston, United States</p>
+                        <h3 class="text-2xl font-black mb-4">Harvard Medical School</h3>
+                        <p class="text-sm text-white/60 leading-relaxed">
+                            Currently based in Boston at Brigham and Women's Hospital, Harvard Medical School, Dr.
+                            Cardoso continues to combine clinical excellence with academic leadership. With over 100
+                            publications and more than 2,650 citations, his work has influenced international
+                            cardiovascular guidelines and inspired physicians worldwide.
+                        </p>
+                        <div class="timeline-image">
+                            <img src="https://placehold.co/600x400/1a2744/white?text=Harvard+Medical+School"
+                                alt="Harvard Medical School">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 3 – GLOBAL IMPACT
+  ============================================================ -->
+    <section class="py-24 bg-white text-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl sm:text-5xl font-black uppercase tracking-tight">Global impact</h2>
+            </div>
+
+            <div class="impact-grid mb-24 reveal">
+                <!-- Stat 1 -->
+                <div>
+                    <span class="impact-stat-label">Students in</span>
+                    <span class="impact-stat-number">150</span>
+                    <span class="impact-stat-label">countries</span>
+                </div>
+
+                <div class="impact-stat-divider"></div>
+
+                <!-- Stat 2 -->
+                <div>
+                    <span class="impact-stat-number">+2600</span>
+                    <span class="impact-stat-label">Citations</span>
+                </div>
+
+                <div class="impact-stat-divider"></div>
+
+                <!-- Stat 3 -->
+                <div>
+                    <span class="impact-stat-number">+100</span>
+                    <span class="impact-stat-label">Papers</span>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-12 items-center opacity-60 reveal">
+                <img src="https://placehold.co/300x100/white/2d4fa1?text=American+College+of+Cardiology" alt="ACC Logo"
+                    class="h-16 grayscale hover:grayscale-0 transition-all">
+                <img src="https://placehold.co/300x100/white/2d4fa1?text=American+Heart+Association" alt="AHA Logo"
+                    class="h-16 grayscale hover:grayscale-0 transition-all">
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 4 – PHOTO GALLERY
+  ============================================================ -->
+    <section class="py-24 bg-gray-50 text-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-black text-navy uppercase tracking-tight">Photo Records of Dr. Rhanderson’s
+                    Journey</h2>
+            </div>
+
+            <div class="gallery-grid stagger">
+                <div class="gallery-item reveal"><img src="https://placehold.co/600x600/1a2744/white?text=Record+1"
+                        alt="Journey Photo 1"></div>
+                <div class="gallery-item reveal"><img src="https://placehold.co/600x600/1a2744/white?text=Record+2"
+                        alt="Journey Photo 2"></div>
+                <div class="gallery-item reveal"><img src="https://placehold.co/600x600/1a2744/white?text=Record+3"
+                        alt="Journey Photo 3"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+       FOOTER (REUSED)
+  ============================================================ -->
+    <footer class="bg-navy-deeper text-white py-16" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12 lg:gap-8">
+
+                <!-- Brand & Address -->
+                <div class="md:col-span-2 lg:col-span-2 space-y-8">
+                    <a href="index.html" class="inline-block">
+                        <img src="img/logo_meta.png" alt="Meta-Analysis Academy"
+                            class="h-12 object-contain brightness-0 invert" />
+                    </a>
+                    <div class="space-y-4 text-white/60 text-sm leading-relaxed max-w-xs">
+                        <p class="font-bold text-white/80">MAA EDUCATION LTDA</p>
+                        <p>
+                            Avenida Tocantins, SN, Quadra 39, Lote 04,<br />
+                            Centro, Mateiros, Tocantins, 77.593-000.
+                        </p>
+                        <p class="pt-4">&copy; MAA Education LTDA</p>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="space-y-6">
+                    <h4 class="font-bold text-white text-base">Links</h4>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li><a href="index.html#mentor" class="hover:text-white transition-colors">Our founder</a></li>
+                        <li><a href="index.html#program" class="hover:text-white transition-colors">Our mission</a></li>
+                        <li><a href="index.html#about" class="hover:text-white transition-colors">Our ethos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Alumni access -->
+                <div class="space-y-6">
+                    <h4 class="font-bold text-white text-base">Alumni access</h4>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Students portal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Publication drive</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Our social media -->
+                <div class="space-y-6">
+                    <h4 class="font-bold text-white text-base">Our social media</h4>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li>
+                            <a href="#" class="hover:text-white transition-colors flex items-center gap-2">
+                                Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS (REUSED) -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
