@@ -32,13 +32,17 @@ class ParticlesAnimation {
         this.canvas = document.getElementById('particlesCanvas');
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
-        this.particleCount = window.innerWidth < 768 ? 20 : 40;
-        this.connectionDistance = 100;
+        this.mouse = { x: -9999, y: -9999 };
+        this.particleCount = window.innerWidth < 768 ? 30 : 60;
+        this.connectionDistance = 130;
+        this.mouseRadius = 140;
 
         this.init();
         this.animate();
 
         window.addEventListener('resize', () => this.handleResize());
+        window.addEventListener('mousemove', (e) => { this.mouse.x = e.clientX; this.mouse.y = e.clientY; });
+        window.addEventListener('mouseleave', () => { this.mouse.x = -9999; this.mouse.y = -9999; });
     }
 
     init() {
@@ -54,40 +58,74 @@ class ParticlesAnimation {
     createParticles() {
         this.particles = [];
         for (let i = 0; i < this.particleCount; i++) {
+            const speed = Math.random() * 0.4 + 0.1;
+            const angle = Math.random() * Math.PI * 2;
             this.particles.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
-                radius: Math.random() * 2 + 1
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                radius: Math.random() * 2 + 1,
+                baseRadius: Math.random() * 2 + 1
             });
         }
     }
 
     updateParticles() {
         this.particles.forEach(particle => {
+            const dx = particle.x - this.mouse.x;
+            const dy = particle.y - this.mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < this.mouseRadius && dist > 0) {
+                const force = (this.mouseRadius - dist) / this.mouseRadius;
+                particle.vx += (dx / dist) * force * 0.6;
+                particle.vy += (dy / dist) * force * 0.6;
+            }
+
+            const speed = Math.sqrt(particle.vx * particle.vx + particle.vy * particle.vy);
+            if (speed > 2.5) { particle.vx = (particle.vx / speed) * 2.5; particle.vy = (particle.vy / speed) * 2.5; }
+
+            particle.vx *= 0.98;
+            particle.vy *= 0.98;
+
             particle.x += particle.vx;
             particle.y += particle.vy;
 
-            // Bounce off edges
             if (particle.x < 0 || particle.x > this.canvas.width) particle.vx *= -1;
             if (particle.y < 0 || particle.y > this.canvas.height) particle.vy *= -1;
+
+            const nearMouse = dist < this.mouseRadius * 0.5;
+            particle.radius = nearMouse
+                ? particle.baseRadius * (1 + (1 - dist / (this.mouseRadius * 0.5)) * 1.5)
+                : particle.baseRadius;
         });
     }
 
     drawParticles() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        // Draw connections
+        // Mouse glow halo
+        if (this.mouse.x > 0) {
+            const grad = this.ctx.createRadialGradient(this.mouse.x, this.mouse.y, 0, this.mouse.x, this.mouse.y, this.mouseRadius);
+            grad.addColorStop(0, 'rgba(0, 212, 255, 0.07)');
+            grad.addColorStop(1, 'rgba(0, 212, 255, 0)');
+            this.ctx.beginPath();
+            this.ctx.arc(this.mouse.x, this.mouse.y, this.mouseRadius, 0, Math.PI * 2);
+            this.ctx.fillStyle = grad;
+            this.ctx.fill();
+        }
+
+        // Connections
         this.particles.forEach((p1, i) => {
             this.particles.slice(i + 1).forEach(p2 => {
                 const dx = p1.x - p2.x;
                 const dy = p1.y - p2.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-
                 if (distance < this.connectionDistance) {
+                    const alpha = (1 - distance / this.connectionDistance) * 0.6;
                     this.ctx.beginPath();
-                    this.ctx.strokeStyle = `rgba(14, 165, 233, ${1 - distance / this.connectionDistance})`;
+                    this.ctx.strokeStyle = `rgba(14, 165, 233, ${alpha})`;
                     this.ctx.lineWidth = 0.5;
                     this.ctx.moveTo(p1.x, p1.y);
                     this.ctx.lineTo(p2.x, p2.y);
@@ -96,12 +134,18 @@ class ParticlesAnimation {
             });
         });
 
-        // Draw particles
+        // Particles
         this.particles.forEach(particle => {
+            const dx = particle.x - this.mouse.x;
+            const dy = particle.y - this.mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            const lit = dist < this.mouseRadius * 0.6;
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = 'rgba(14, 165, 233, 0.8)';
+            this.ctx.fillStyle = lit ? 'rgba(0, 212, 255, 1)' : 'rgba(14, 165, 233, 0.75)';
+            if (lit) { this.ctx.shadowColor = '#00d4ff'; this.ctx.shadowBlur = 8; }
             this.ctx.fill();
+            this.ctx.shadowBlur = 0;
         });
     }
 
@@ -966,3 +1010,31 @@ if ('serviceWorker' in navigator) {
         //     .catch(error => console.log('SW registration failed:', error));
     });
 }
+
+// ========================================
+// Custom Cursor
+// ========================================
+(function() {
+    const ring = document.getElementById('cursor-ring');
+    const dot  = document.getElementById('cursor-dot');
+    if (!ring || !dot) return;
+
+    let rx = 0, ry = 0, mx = 0, my = 0;
+
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    document.addEventListener('mousedown', () => ring.classList.add('clicking'));
+    document.addEventListener('mouseup',   () => ring.classList.remove('clicking'));
+
+    (function loop() {
+        // Dot follows instantly, ring lags slightly
+        rx += (mx - rx) * 0.18;
+        ry += (my - ry) * 0.18;
+
+        dot.style.left  = mx + 'px';
+        dot.style.top   = my + 'px';
+        ring.style.left = rx + 'px';
+        ring.style.top  = ry + 'px';
+
+        requestAnimationFrame(loop);
+    })();
+})();
