@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Performance & SEO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="canonical" href="https://metaanalysisacademy.com/our-ethos.html" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Ethos: Principles of Academic Excellence – Meta-Analysis Academy</title>
+    <meta name="description"
+        content="Discover the principles that drive Meta-Analysis Academy: scientific rigor, transparency, and a commitment to advancing medical knowledge through evidence-based research." />
+    <meta name="keywords"
+        content="academic ethos, scientific rigor, research transparency, medical ethics, meta-analysis values" />
+    <meta property="og:title" content="Our Ethos: Principles of Academic Excellence – Meta-Analysis Academy" />
+    <meta property="og:description" content="Learn about the core values and scientific principles that define our academy." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metaanalysisacademy.com/our-ethos.html" />
+
+    <!-- Tailwind CDN + custom tokens -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#1a2744',
+                            dark: '#111c36',
+                            deeper: '#0d1628',
+                        },
+                        brand: '#2d4fa1',
+                    },
+                    fontFamily: {
+                        sans: ['IBM Plex Sans', 'Inter', 'system-ui', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700;800;900&display=swap&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .ethos-text {
+            color: #0d1628;
+        }
+        .ethos-bg {
+            background-color: #ffffff;
+        }
+        .header-light {
+            background-color: #ffffff;
+            border-bottom: 1px solid rgba(13, 22, 40, 0.05);
+        }
+        .header-light a {
+            color: rgba(13, 22, 40, 0.7);
+        }
+        .header-light a:hover {
+            color: #0d1628;
+        }
+        .vertical-line {
+            width: 2px;
+            background-color: rgba(13, 22, 40, 0.1);
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .step-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #0d1628;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+        .step-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #0d1628;
+            letter-spacing: -0.01em;
+        }
+
+        /* Adjusted button style */
+        .btn-navy {
+            background-color: #0d1628 !important;
+            color: #ffffff !important;
+            border-radius: 9999px !important;
+            padding: 0.75rem 2rem !important;
+            font-size: 0.65rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.15em !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .btn-navy:hover {
+            background-color: #1a2744 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(13, 22, 40, 0.2);
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        @media (max-width: 640px) {
+            .step-number { font-size: 2.5rem; }
+            .step-title { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+
+<body class="font-sans ethos-text antialiased ethos-bg">
+
+    <!-- ============================================================
+       NAVBAR (Light Mode)
+  ============================================================ -->
+    <header class="fixed top-0 inset-x-0 z-50 header-light">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between md:h-24 h-20 transition-all duration-300">
+
+            <!-- Logo -->
+            <a href="index.html" class="shrink-0">
+                <img src="img/logo_meta.png" alt="Meta-Analysis Academy" class="h-10 object-contain brightness-0" />
+            </a>
+
+            <!-- Desktop nav -->
+            <nav class="hidden md:flex items-center gap-10 text-[10px] font-semibold tracking-[0.2em] uppercase">
+                <a href="index.html#about" class="transition-colors">About Us</a>
+                <a href="index.html#program" class="transition-colors">Our Program</a>
+                <a href="#" class="transition-colors">Alumni Access</a>
+            </nav>
+
+            <!-- Desktop CTAs -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="index.html#waitlist" class="btn-navy">
+                    Join the waitlist
+                </a>
+            </div>
+
+            <!-- Mobile hamburger -->
+            <button id="menu-toggle" class="md:hidden p-2 rounded text-navy/70 hover:text-navy"
+                aria-label="Open navigation menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-navy/10 px-4 pb-4">
+            <nav class="flex flex-col gap-3 pt-3 text-sm font-semibold text-navy/70 uppercase tracking-wide">
+                <a href="index.html#about" class="hover:text-navy">About Us</a>
+                <a href="index.html#program" class="hover:text-navy">Our Program</a>
+                <a href="#" class="hover:text-navy">Alumni Access</a>
+                <a href="index.html#waitlist" class="mt-2 btn-navy">
+                    Join the waitlist
+                </a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- ============================================================
+       SECTION 1 – WHY IS OUR PROGRAM EXPENSIVE?
+  ============================================================ -->
+    <section class="pt-40 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="w-full">
+                <h1 class="text-3xl sm:text-5xl lg:text-[64px] font-medium text-navy leading-[1.2] mb-12 whitespace-normal sm:whitespace-nowrap tracking-normal reveal">
+                    Why Is Our Program Expensive?
+                </h1>
+                <div class="space-y-10 text-xl text-navy/70 leading-relaxed font-light max-w-4xl">
+                    <p class="reveal delay-100">
+                        At the Meta-Analysis Academy, we receive many inquiries about the pricing of our program. We believe in addressing this openly.
+                    </p>
+                    <p class="reveal delay-200">
+                        A big portion of our content (YouTube videos, eBooks and live sessions on research topics) are offered free of charge to anyone with internet access. This allows us to fulfil our mission of making this knowledge accessible worldwide. However, our advanced program teaching the methodology and direct application of meta-analyses is a premium service, requiring tuition to ensure sustainability and quality.
+                    </p>
+                    <p class="reveal delay-300">
+                        This program is not simply a collection of recorded lessons. They are the result of the coordinated effort of a team of over 100 professionals - tutors, teaching assistants, ambassadors across departments, coordinators and directors - who dedicate their expertise to ensure that all learners receive high-quality training once they enroll. The tuition fees secure the continuation of our program, support the many professionals working behind the scenes, and guarantee the high standards our participants expect.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 2 – THE APPLICATION PROCESS
+  ============================================================ -->
+    <section class="py-24 bg-gray-50/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mb-16">
+                <h2 class="text-4xl sm:text-5xl font-black text-navy leading-tight mb-8 reveal">
+                    The Application Process
+                </h2>
+                <p class="text-lg text-navy/70 leading-relaxed reveal delay-100">
+                    Our programs are not designed for everyone. They require commitment, engagement, and alignment between the learner's goals and what we provide. For this reason, every prospective participant must go through an application and waiting list process:
+                </p>
+            </div>
+
+            <div class="space-y-16 max-w-4xl relative">
+                <!-- Vertical Line -->
+                <div class="absolute left-10 sm:left-14 top-8 bottom-8 w-0.5 bg-navy/10"></div>
+
+                <!-- Step 01 -->
+                <div class="flex items-start gap-8 sm:gap-12 relative reveal">
+                    <div class="shrink-0 w-20 sm:w-28 text-center bg-transparent z-10 py-2">
+                        <span class="step-number">01</span>
+                    </div>
+                    <div class="pt-2">
+                        <h3 class="step-title mb-4">Waiting list registration.</h3>
+                        <p class="text-lg text-navy/60 leading-relaxed">
+                            Interested applicants place their names on our official waiting list available online.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="flex items-start gap-8 sm:gap-12 relative reveal delay-100">
+                    <div class="shrink-0 w-20 sm:w-28 text-center bg-transparent z-10 py-2">
+                        <span class="step-number">02</span>
+                    </div>
+                    <div class="pt-2">
+                        <h3 class="step-title mb-4">Direct Contact.</h3>
+                        <p class="text-lg text-navy/60 leading-relaxed">
+                            One of our commercial representatives reaches out to schedule a call when a spot becomes available.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="flex items-start gap-8 sm:gap-12 relative reveal delay-200">
+                    <div class="shrink-0 w-20 sm:w-28 text-center bg-transparent z-10 py-2">
+                        <span class="step-number">03</span>
+                    </div>
+                    <div class="pt-2">
+                        <h3 class="step-title mb-4">Alignment call.</h3>
+                        <p class="text-lg text-navy/60 leading-relaxed">
+                            This conversation allows us to understand the applicant's ambitions, needs, and current reality, while also clarifying whether our program is the right fit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mt-20">
+                <p class="text-lg text-navy/70 leading-relaxed reveal">
+                    This process ensures not only that the participant benefits from the training, but also that the Academy can provide what they need to succeed. The structure helps us maintain high-quality cohorts of learners who are committed to achieving meaningful outcomes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       SECTION 3 – THE VALUE OF THE INVESTMENT
+  ============================================================ -->
+    <section class="py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navy rounded-[32px] p-12 sm:p-20 text-center text-white reveal">
+                <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight mb-10">
+                    THE VALUE OF THE INVESTMENT
+                </h2>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-lg sm:text-xl text-white/90 leading-relaxed font-medium">
+                        Our premium program is designed to deliver profound professional transformation. Graduates gain practical skills, applied expertise, and a strong methodological foundation in meta-analysis - tools that often accelerate their careers and research impact. Thus, while our tuition represents an investment, it also reflects the exceptional value and long-term benefits that participants derive from the experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+       FOOTER (REUSED)
+  ============================================================ -->
+    <footer class="bg-navy-deeper text-white py-16" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12 lg:gap-8">
+
+                <!-- Brand & Address -->
+                <div class="md:col-span-2 lg:col-span-2 space-y-8">
+                    <a href="index.html" class="inline-block">
+                        <img src="img/logo_meta.png" alt="Meta-Analysis Academy logo" width="200" height="50" loading="lazy"
+                            class="h-12 object-contain brightness-0 invert" />
+                    </a>
+                    <div class="space-y-4 text-white/60 text-sm leading-relaxed max-w-xs">
+                        <p class="font-bold text-white/80">MAA EDUCATION LTDA</p>
+                        <p>
+                            Avenida Tocantins, SN, Quadra 39, Lote 04,<br />
+                            Centro, Mateiros, Tocantins, 77.593-000.
+                        </p>
+                        <p class="pt-4">&copy; MAA Education LTDA</p>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="space-y-6">
+                    <h4 class="font-bold text-white text-base">Links</h4>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li><a href="founder.html" class="hover:text-white transition-colors">Our founder</a></li>
+                        <li><a href="index.html#program" class="hover:text-white transition-colors">Our mission</a></li>
+                        <li><a href="our-ethos.html" class="hover:text-white transition-colors">Our ethos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Alumni access -->
+                <div class="space-y-6">
+                    <h4 class="font-bold text-white text-base">Alumni access</h4>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Students portal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Publication drive</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Our social media -->
+                <div class="space-y-6">
+                    <h4 class="font-bold text-white text-base">Our social media</h4>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li>
+                            <a href="#" class="hover:text-white transition-colors flex items-center gap-2">
+                                Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS (REUSED) -->
+    <script src="js/main.js"></script>
+    <script>
+        // Reveal animation toggle
+        const observerOptions = {
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+</body>
+
+</html>

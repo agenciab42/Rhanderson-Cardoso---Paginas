@@ -2,9 +2,23 @@
 <html lang="en">
 
 <head>
+    <!-- Performance & SEO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="canonical" href="https://metaanalysisacademy.com/founder.html" />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Founder – Meta-Analysis Academy</title>
+    <title>Our Founder: Rhanderson Cardoso, MD FACC – Meta-Analysis Academy</title>
+    <meta name="description"
+        content="Learn about Dr. Rhanderson Cardoso, cardiologist at Harvard Medical School and founder of Meta-Analysis Academy, dedicated to training the next generation of researchers." />
+    <meta name="keywords"
+        content="Rhanderson Cardoso, Meta-Analysis Academy, cardiovascular epidemiology, Harvard Medical School, Brigham and Women's Hospital, research mentor" />
+    <meta property="og:title" content="Our Founder: Rhanderson Cardoso, MD FACC – Meta-Analysis Academy" />
+    <meta property="og:description" content="Meet the founder of Meta-Analysis Academy and learn about his journey in medical research and education." />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://metaanalysisacademy.com/founder.html" />
 
     <!-- Tailwind CDN + custom tokens -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,14 +43,24 @@
     </script>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700;800;900&display=swap&display=swap"
         rel="stylesheet" />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/founder.css" />
+    <style>
+        .founder-hero-bg {
+            background-color: #0d1628;
+        }
+        @media (min-width: 1024px) {
+            .founder-hero-bg {
+                background-image: url('img/bg_desktop_founder.png');
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    </style>
 </head>
 
 <body class="font-sans text-gray-800 antialiased bg-navy-deeper">
@@ -54,24 +78,28 @@
             </a>
 
             <!-- Desktop nav -->
-            <nav class="hidden md:flex items-center gap-10 text-sm font-semibold tracking-wide text-white/70 uppercase">
+            <nav class="hidden md:flex items-center gap-10 text-[10px] font-semibold tracking-[0.2em] text-white/80 uppercase">
                 <a href="index.html#hero" class="hover:text-white transition-colors">Home</a>
                 <a href="index.html#about" class="hover:text-white transition-colors">About Us</a>
                 <a href="index.html#program" class="hover:text-white transition-colors">Our Program</a>
             </nav>
 
             <!-- Desktop CTAs -->
-            <div class="hidden md:flex items-center gap-3">
+            <div class="hidden md:flex items-center gap-4">
                 <a href="index.html#waitlist"
-                    class="inline-flex items-center px-5 py-2 rounded-full btn-gradient text-sm tracking-wide uppercase">
+                    class="inline-flex items-center px-8 py-3 rounded-full bg-[#2d4fa1] text-[10px] font-bold tracking-[0.1em] text-white uppercase hover:bg-brand/90 transition-all">
                     Join the waitlist
+                </a>
+                <a href="#"
+                    class="inline-flex items-center px-8 py-3 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold tracking-[0.1em] text-white/90 uppercase hover:bg-white/10 transition-all">
+                    Student Portal
                 </a>
             </div>
 
             <!-- Mobile hamburger -->
             <button id="menu-toggle" class="md:hidden p-2 rounded text-white/70 hover:text-white"
-                aria-label="Open menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                aria-label="Open navigation menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
@@ -84,7 +112,7 @@
                 <a href="index.html#about" class="hover:text-white">About Us</a>
                 <a href="index.html#program" class="hover:text-white">Our Program</a>
                 <a href="index.html#waitlist"
-                    class="mt-2 inline-flex justify-center px-5 py-2 rounded-full btn-gradient">
+                    class="mt-2 inline-flex justify-center px-8 py-3 rounded-full bg-brand">
                     Join the waitlist
                 </a>
             </nav>
@@ -95,23 +123,23 @@
     <!-- ============================================================
        SECTION 1 – FOUNDER HERO
   ============================================================ -->
-    <section class="pt-32 pb-20 bg-navy-deeper min-h-[80vh] flex items-center text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <section class="pt-32 pb-0 min-h-screen flex items-center text-white overflow-hidden relative founder-hero-bg">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
 
                 <!-- Left content -->
-                <div class="reveal">
-                    <p class="text-brand font-bold tracking-widest uppercase text-sm mb-6">OUR FOUNDER</p>
-                    <h1 class="text-5xl sm:text-7xl font-black leading-tight mb-8">
-                        Who is Rhanderson Cardoso,<span class="text-brand">MD, FACC?</span>
+                <div class="reveal py-20">
+                    <p class="text-white/40 font-light tracking-[0.31em] uppercase text-base mb-6 leading-[1.8]">OUR FOUNDER</p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-[64px] font-medium leading-[1.2] mb-12 tracking-normal">
+                        Who is Rhanderson<br>Cardoso, MD, FACC?
                     </h1>
-                    <p class="text-xl text-white/70 leading-relaxed mb-12 max-w-xl">
+                    <p class="text-xl sm:text-2xl text-white/70 font-light leading-relaxed mb-16 max-w-2xl">
                         A cardiologist at Brigham and Women’s Hospital, Harvard Medical School, with cardiology training
                         and a Master’s degree in Cardiovascular Epidemiology from Johns Hopkins.
                     </p>
 
-                    <div class="pt-12 border-t border-white/10">
-                        <p class="text-xs text-white/40 leading-relaxed max-w-md italic">
+                    <div class="pt-12">
+                        <p class="text-[10px] text-white/30 font-medium leading-relaxed max-w-md">
                             *The opinions expressed by Rhanderson Cardoso and Meta-Analysis Academy are solely their own
                             and do not represent any institution mentioned. Meta-Analysis Academy is an independent
                             educational initiative and is not affiliated with or endorsed by any referenced
@@ -120,12 +148,9 @@
                     </div>
                 </div>
 
-                <!-- Right image placeholder -->
-                <div class="reveal relative flex justify-center lg:justify-end self-end">
-                    <div class="relative w-full max-w-lg aspect-[4/5]">
-                        <img src="https://placehold.co/800x1000/0d1628/white?text=Dr.+Rhanderson+Cardoso"
-                            alt="Dr. Rhanderson Cardoso" class="w-full h-full object-cover" />
-                    </div>
+                <!-- Right image space (Empty on Desktop, Image on Mobile) -->
+                <div class="reveal relative flex justify-center lg:justify-end self-end lg:h-[90vh]">
+                    <img src="img/img_hero_mobile.png" alt="Dr. Rhanderson Cardoso" class="lg:hidden w-full max-w-sm mt-8" />
                 </div>
 
             </div>
@@ -237,10 +262,10 @@
             </div>
 
             <div class="flex flex-wrap justify-center gap-12 items-center opacity-60 reveal">
-                <img src="https://placehold.co/300x100/white/2d4fa1?text=American+College+of+Cardiology" alt="ACC Logo"
-                    class="h-16 grayscale hover:grayscale-0 transition-all">
-                <img src="https://placehold.co/300x100/white/2d4fa1?text=American+Heart+Association" alt="AHA Logo"
-                    class="h-16 grayscale hover:grayscale-0 transition-all">
+                <img src="https://placehold.co/300x100/white/2d4fa1?text=American+College+of+Cardiology" alt="American College of Cardiology logo"
+                    width="200" height="64" loading="lazy" class="h-16 grayscale hover:grayscale-0 transition-all">
+                <img src="https://placehold.co/300x100/white/2d4fa1?text=American+Heart+Association" alt="American Heart Association logo"
+                    width="200" height="64" loading="lazy" class="h-16 grayscale hover:grayscale-0 transition-all">
             </div>
         </div>
     </section>
@@ -257,11 +282,11 @@
 
             <div class="gallery-grid stagger">
                 <div class="gallery-item reveal"><img src="https://placehold.co/600x600/1a2744/white?text=Record+1"
-                        alt="Journey Photo 1"></div>
+                        alt="Dr. Rhanderson Cardoso participating in a medical research forum" width="600" height="600" loading="lazy"></div>
                 <div class="gallery-item reveal"><img src="https://placehold.co/600x600/1a2744/white?text=Record+2"
-                        alt="Journey Photo 2"></div>
+                        alt="Rhanderson Cardoso presenting at a healthcare symposium" width="600" height="600" loading="lazy"></div>
                 <div class="gallery-item reveal"><img src="https://placehold.co/600x600/1a2744/white?text=Record+3"
-                        alt="Journey Photo 3"></div>
+                        alt="Academic recognition of Dr. Rhanderson's work" width="600" height="600" loading="lazy"></div>
             </div>
         </div>
     </section>
@@ -277,8 +302,8 @@
                 <!-- Brand & Address -->
                 <div class="md:col-span-2 lg:col-span-2 space-y-8">
                     <a href="index.html" class="inline-block">
-                        <img src="img/logo_meta.png" alt="Meta-Analysis Academy"
-                            class="h-12 object-contain brightness-0 invert" />
+                        <img src="img/logo_meta.png" alt="Meta-Analysis Academy logo"
+                            width="200" height="50" loading="lazy" class="h-12 object-contain brightness-0 invert" />
                     </a>
                     <div class="space-y-4 text-white/60 text-sm leading-relaxed max-w-xs">
                         <p class="font-bold text-white/80">MAA EDUCATION LTDA</p>
