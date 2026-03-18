@@ -44,24 +44,32 @@
 
 /* text card half */
 .timeline-text {
-    width: 50%;
-    padding: 0 2.5rem 0 0;
+    width: calc(50% - 2rem);
+    padding-right: 2rem;
 }
 
 .timeline-right .timeline-text {
-    padding: 0 0 0 2.5rem;
+    padding-right: 0;
+    padding-left: 2rem;
     order: 2;
 }
 
 /* image half */
 .timeline-img {
-    width: 50%;
-    padding: 0 0 0 2.5rem;
+    width: calc(50% - 2rem);
+    padding-left: 2rem;
 }
 
 .timeline-right .timeline-img {
-    padding: 0 2.5rem 0 0;
+    padding-left: 0;
+    padding-right: 2rem;
     order: 1;
+}
+
+/* center spacer (dot area) */
+.timeline-text,
+.timeline-img {
+    flex-shrink: 0;
 }
 
 .timeline-content {
