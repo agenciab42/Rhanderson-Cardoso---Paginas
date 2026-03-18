@@ -11,7 +11,7 @@
     content: '';
     position: absolute;
     width: 0;
-    border-left: 2px dashed #2d4fa1;
+    border-left: 2px dashed rgba(45, 79, 161, 0.4);
     top: 0;
     bottom: 0;
     left: 50%;
@@ -25,51 +25,56 @@
     align-items: flex-start;
     position: relative;
     width: 100%;
-    padding: 1.5rem 0;
+    padding: 2.5rem 0;
     gap: 0;
 }
 
-/* dot on the center line — solid blue */
-.timeline-item::after {
-    content: '';
+/* dot — starts dim, lights up on .active */
+.timeline-dot {
     position: absolute;
-    width: 18px;
-    height: 18px;
-    left: calc(50% - 9px);
-    top: 2.4rem;
-    background-color: #2d4fa1;
+    width: 16px;
+    height: 16px;
+    left: calc(50% - 8px);
+    top: 3rem;
+    background-color: rgba(45, 79, 161, 0.3);
+    border: 2px solid rgba(45, 79, 161, 0.5);
     border-radius: 50%;
     z-index: 2;
+    transition: background-color 0.5s ease, border-color 0.5s ease,
+                box-shadow 0.5s ease, transform 0.4s ease;
 }
 
-/* text card half */
+.timeline-dot.active {
+    background-color: #2d4fa1;
+    border-color: #4a6fd4;
+    box-shadow: 0 0 0 5px rgba(45, 79, 161, 0.25), 0 0 16px rgba(45, 79, 161, 0.5);
+    transform: scale(1.2);
+}
+
+/* text card half — gap from center line */
 .timeline-text {
-    width: calc(50% - 2rem);
-    padding-right: 2rem;
+    width: calc(50% - 3rem);
+    padding-right: 3rem;
+    flex-shrink: 0;
 }
 
 .timeline-right .timeline-text {
     padding-right: 0;
-    padding-left: 2rem;
+    padding-left: 3rem;
     order: 2;
 }
 
-/* image half */
+/* image half — gap from center line */
 .timeline-img {
-    width: calc(50% - 2rem);
-    padding-left: 2rem;
+    width: calc(50% - 3rem);
+    padding-left: 3rem;
+    flex-shrink: 0;
 }
 
 .timeline-right .timeline-img {
     padding-left: 0;
-    padding-right: 2rem;
+    padding-right: 3rem;
     order: 1;
-}
-
-/* center spacer (dot area) */
-.timeline-text,
-.timeline-img {
-    flex-shrink: 0;
 }
 
 .timeline-content {
@@ -124,9 +129,9 @@
         padding-left: 52px;
     }
 
-    .timeline-item::after {
-        left: 10px;
-        top: 2rem;
+    .timeline-dot {
+        left: 12px;
+        top: 2.5rem;
     }
 
     .timeline-text,
@@ -139,11 +144,6 @@
     }
 
     .timeline-img { margin-top: 1rem; }
-
-    .timeline-content,
-    .timeline-right .timeline-content {
-        text-align: left;
-    }
 }
 
 /* ---------- Impact Stats ---------- */

@@ -180,6 +180,7 @@
 
                 <!-- Item 1: text LEFT, image RIGHT -->
                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-text">
                         <div class="timeline-content">
                             <p class="text-xs text-brand font-bold mb-2 uppercase">Tocantins, Brazil</p>
@@ -192,14 +193,15 @@
                         </div>
                     </div>
                     <div class="timeline-img">
-                        <img src="img/founder-timeline-1.jpg" alt="Early Years in Brazil">
+                        <img src="img/founder-timeline-1.png" alt="Early Years in Brazil">
                     </div>
                 </div>
 
                 <!-- Item 2: image LEFT, text RIGHT -->
                 <div class="timeline-item timeline-right">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-img">
-                        <img src="img/founder-timeline-2.jpg" alt="Chief Residency Award">
+                        <img src="img/founder-timeline-2.png" alt="Chief Residency Award">
                     </div>
                     <div class="timeline-text">
                         <div class="timeline-content">
@@ -217,6 +219,7 @@
 
                 <!-- Item 3: text LEFT, image RIGHT -->
                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-text">
                         <div class="timeline-content">
                             <p class="text-xs text-brand font-bold mb-2 uppercase">Boston, United States</p>
@@ -235,7 +238,7 @@
                         </div>
                     </div>
                     <div class="timeline-img">
-                        <img src="img/founder-timeline-3.jpg" alt="Harvard Medical School">
+                        <img src="img/founder-timeline-3.png" alt="Harvard Medical School">
                     </div>
                 </div>
 
@@ -297,11 +300,11 @@
             </div>
 
             <div class="gallery-grid stagger">
-                <div class="gallery-item reveal"><img src="https://placehold.co/600x600/1a2744/white?text=Record+1"
+                <div class="gallery-item reveal"><img src="img/roda_founde 1.png"
                         alt="Dr. Rhanderson Cardoso participating in a medical research forum" width="600" height="600" loading="lazy"></div>
-                <div class="gallery-item reveal"><img src="https://placehold.co/600x600/1a2744/white?text=Record+2"
+                <div class="gallery-item reveal"><img src="img/roda_founde 2.png"
                         alt="Rhanderson Cardoso presenting at a healthcare symposium" width="600" height="600" loading="lazy"></div>
-                <div class="gallery-item reveal"><img src="https://placehold.co/600x600/1a2744/white?text=Record+3"
+                <div class="gallery-item reveal"><img src="img/roda_founde 3.png"
                         alt="Academic recognition of Dr. Rhanderson's work" width="600" height="600" loading="lazy"></div>
             </div>
         </div>
@@ -369,6 +372,18 @@
 
     <!-- Custom JS (REUSED) -->
     <script src="js/main.js"></script>
+    <script>
+        // Timeline dot scroll animation
+        const dots = document.querySelectorAll('.timeline-dot');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.5 });
+        dots.forEach(dot => observer.observe(dot));
+    </script>
 
 </body>
 
