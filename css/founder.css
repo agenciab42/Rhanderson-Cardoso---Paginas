@@ -6,12 +6,12 @@
     padding: 4rem 0;
 }
 
-/* vertical center line */
+/* vertical center line — dashed */
 .timeline-container::after {
     content: '';
     position: absolute;
-    width: 2px;
-    background-color: #2d4fa1;
+    width: 0;
+    border-left: 2px dashed #2d4fa1;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -25,20 +25,19 @@
     align-items: flex-start;
     position: relative;
     width: 100%;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     gap: 0;
 }
 
-/* dot on the center line */
+/* dot on the center line — solid blue */
 .timeline-item::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    left: calc(50% - 10px);
-    top: 2.6rem;
-    background-color: #0d1628;
-    border: 4px solid #2d4fa1;
+    width: 18px;
+    height: 18px;
+    left: calc(50% - 9px);
+    top: 2.4rem;
+    background-color: #2d4fa1;
     border-radius: 50%;
     z-index: 2;
 }
@@ -46,22 +45,22 @@
 /* text card half */
 .timeline-text {
     width: 50%;
-    padding: 0 3rem 0 0;
+    padding: 0 2.5rem 0 0;
 }
 
 .timeline-right .timeline-text {
-    padding: 0 0 0 3rem;
+    padding: 0 0 0 2.5rem;
     order: 2;
 }
 
 /* image half */
 .timeline-img {
     width: 50%;
-    padding: 0 0 0 3rem;
+    padding: 0 0 0 2.5rem;
 }
 
 .timeline-right .timeline-img {
-    padding: 0 3rem 0 0;
+    padding: 0 2.5rem 0 0;
     order: 1;
 }
 
@@ -69,12 +68,8 @@
     padding: 28px;
     background-color: #111c36;
     border-radius: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px dashed rgba(45, 79, 161, 0.6);
     transition: background-color 0.3s ease;
-    text-align: right;
-}
-
-.timeline-right .timeline-content {
     text-align: left;
 }
 
