@@ -1,110 +1,145 @@
 /* ---------- Timeline Section ---------- */
 .timeline-container {
     position: relative;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 4rem 0;
 }
 
+/* vertical center line */
 .timeline-container::after {
     content: '';
     position: absolute;
     width: 2px;
     background-color: #2d4fa1;
-    /* brand color */
     top: 0;
     bottom: 0;
     left: 50%;
     margin-left: -1px;
+    z-index: 0;
 }
 
+/* each row spans full width */
 .timeline-item {
-    padding: 10px 40px;
+    display: flex;
+    align-items: flex-start;
     position: relative;
-    background-color: inherit;
-    width: 50%;
+    width: 100%;
+    padding: 2rem 0;
+    gap: 0;
 }
 
+/* dot on the center line */
 .timeline-item::after {
     content: '';
     position: absolute;
     width: 20px;
     height: 20px;
-    right: -10px;
+    left: calc(50% - 10px);
+    top: 2.6rem;
     background-color: #0d1628;
-    /* navy-deeper */
     border: 4px solid #2d4fa1;
-    top: 24px;
     border-radius: 50%;
-    z-index: 1;
+    z-index: 2;
 }
 
-.timeline-left {
-    left: 0;
-    text-align: right;
+/* text card half */
+.timeline-text {
+    width: 50%;
+    padding: 0 3rem 0 0;
 }
 
-.timeline-right {
-    left: 50%;
-    text-align: left;
+.timeline-right .timeline-text {
+    padding: 0 0 0 3rem;
+    order: 2;
 }
 
-.timeline-left::after {
-    left: auto;
-    right: -10px;
+/* image half */
+.timeline-img {
+    width: 50%;
+    padding: 0 0 0 3rem;
 }
 
-.timeline-right::after {
-    left: -10px;
+.timeline-right .timeline-img {
+    padding: 0 3rem 0 0;
+    order: 1;
 }
 
 .timeline-content {
-    padding: 32px;
+    padding: 28px;
     background-color: #111c36;
-    /* navy-dark */
-    position: relative;
     border-radius: 0.5rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
+    text-align: right;
+}
+
+.timeline-right .timeline-content {
+    text-align: left;
 }
 
 .timeline-content:hover {
     background-color: #1a2744;
 }
 
-.timeline-image {
-    width: 100%;
-    border-radius: 0.5rem;
-    margin-top: 1.5rem;
-    overflow: hidden;
-}
-
-.timeline-image img {
+.timeline-img img {
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
+    border-radius: 0.5rem;
     display: block;
+}
+
+/* award badge inside card */
+.timeline-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    padding: 0.5rem 1rem;
+    background: #1a2f5e;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 0.5rem;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.7);
+    text-align: left;
+    line-height: 1.4;
+}
+
+.timeline-badge-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
 }
 
 @media screen and (max-width: 768px) {
     .timeline-container::after {
-        left: 31px;
+        left: 20px;
     }
 
     .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-        text-align: left;
+        flex-direction: column;
+        padding-left: 52px;
     }
 
     .timeline-item::after {
-        left: 21px;
+        left: 10px;
+        top: 2rem;
     }
 
-    .timeline-left,
-    .timeline-right {
-        left: 0%;
+    .timeline-text,
+    .timeline-right .timeline-text,
+    .timeline-img,
+    .timeline-right .timeline-img {
+        width: 100%;
+        padding: 0;
+        order: unset;
+    }
+
+    .timeline-img { margin-top: 1rem; }
+
+    .timeline-content,
+    .timeline-right .timeline-content {
+        text-align: left;
     }
 }
 
