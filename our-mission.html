@@ -110,6 +110,9 @@
                 <a href="index.html#hero" class="hover:text-white transition-colors">Home</a>
                 <a href="index.html#about" class="hover:text-white transition-colors">About Us</a>
                 <a href="index.html#program" class="hover:text-white transition-colors">Our Program</a>
+                <a href="founder.html" class="hover:text-white transition-colors">Founder</a>
+                <a href="our-ethos.html" class="hover:text-white transition-colors">Our Ethos</a>
+                <a href="our-mission.html" class="text-white transition-colors">Our Mission</a>
             </nav>
 
             <!-- Desktop CTAs -->
@@ -131,6 +134,22 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-deeper border-t border-white/10 px-4 pb-4">
+            <nav class="flex flex-col gap-3 pt-3 text-sm font-semibold text-white/70 uppercase tracking-wide">
+                <a href="index.html#hero" class="hover:text-white">Home</a>
+                <a href="index.html#about" class="hover:text-white">About Us</a>
+                <a href="index.html#program" class="hover:text-white">Our Program</a>
+                <a href="founder.html" class="hover:text-white">Founder</a>
+                <a href="our-ethos.html" class="hover:text-white">Our Ethos</a>
+                <a href="our-mission.html" class="text-white">Our Mission</a>
+                <a href="index.html#waitlist"
+                    class="mt-2 inline-flex justify-center px-8 py-3 rounded-full bg-brand text-white">
+                    Join the waitlist
+                </a>
+            </nav>
         </div>
     </header>
 
@@ -506,6 +525,15 @@
             }, observerOptions);
 
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
         });
     </script>
 </body>
